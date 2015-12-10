@@ -31,8 +31,19 @@
     </nav>
     <div class="row">
       <div class="large-12 columns">
+        <div class="container">
+
+          <% if session[:user_id] %>
+            <p><a href="/logout">Cierra Sesión</a></p>
+          <% end %>
+
+          <% if session[:errors] %>
+            <p><%= session[:errors] %></p>
+            <% session[:errors].clear %>
+          <% end %>
 
     <%= yield %>
+  </div>
   </div>
 </div>
   </body>

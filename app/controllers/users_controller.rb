@@ -10,9 +10,14 @@ class UsersController < ApplicationController
   def show
   end
 	# GET /users/new
-	def new
+	def new1
     @user = User.new
 	end
+
+  def new2
+    @user = User.new
+  end
+ 
   # POST /users
   # POST /users.json
 	def create
@@ -28,6 +33,7 @@ class UsersController < ApplicationController
       end
     end
 	end
+
 
   # GET /users/1/edit
 	def edit
@@ -62,7 +68,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :password)
+      params.require(:user).permit(:name, :last_name, :email, :genre, :birthday_year, :opinion, :organization, :password, :user_type)
     end
 
 end
