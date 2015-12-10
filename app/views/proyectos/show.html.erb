@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+	<strong>Project Name:</strong>
+	<%= @proyecto.title %>
+	<strong>Project Description:</strong>
+	<%= @proyecto.description %>
+	<strong>Incentive:</strong>
+	<%= @proyecto.incentive %>
+	<strong>Result:</strong>
+	<%= @proyecto.result %>
+	<strong>Number of Students Accepted:</strong>
+	<%= @proyecto.num_students %>
+	<strong>Project Deadline:</strong>
+	<%= @proyecto.dead_line %>
+</p>
+
+<%= link_to 'Edit', edit_proyecto_path(@proyecto) %> |
+<%= link_to 'Back', proyectos_path %>
