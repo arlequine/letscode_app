@@ -16,14 +16,6 @@ ActiveRecord::Schema.define(version: 20151209234914) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "postulaciones", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "proyecto_id"
-    t.boolean  "status"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "postulations", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "proyecto_id"
