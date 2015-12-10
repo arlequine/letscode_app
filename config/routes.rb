@@ -4,10 +4,14 @@ Rails.application.routes.draw do
   
   get '/logout', to: 'sessions#logout', as: 'logout'
 
-  get '/signin', to: 'sessions#signin_form', as: 'signin_form'
+  # get '/signin', to: 'sessions#signin_form', as: 'signin_form'
   post '/signin', to: 'sessions#signin', as: 'signin'
 
   #get '/proyectos', to: 'sessions#proyectos', as: 'project'
+
+  get '/new1', to: 'users#new1', as: 'empresa'
+
+  get '/new2', to: 'users#new2', as: 'practicante'
 
   resources :users
   resources :skills
