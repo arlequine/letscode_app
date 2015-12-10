@@ -1,0 +1,20 @@
+<%= simple_form_for @skill do |f| %>
+  <% if @skill.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@skill.errors.count, "error") %> prohibited this skill from being saved: </h2>
+      <ul>
+        <% @skill.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="large-5 columns log-in-form">
+   <%= f.input :name, placeholder: 'Skill Name', label: false %>
+   <br>
+   <div class="controls">
+    <%= f.submit 'Skill', class: 'button expanded'%>
+   </div>
+  </div>
+<% end %>
