@@ -16,6 +16,14 @@ ActiveRecord::Schema.define(version: 20151209234914) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "answers", force: :cascade do |t|
+    t.string   "answer"
+    t.integer  "responder_id"
+    t.integer  "question_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "postulations", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "proyecto_id"
@@ -29,6 +37,54 @@ ActiveRecord::Schema.define(version: 20151209234914) do
     t.integer  "proyecto_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "proyectos", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "incentive"
+    t.string   "result"
+    t.integer  "num_students"
+    t.date     "dead_line"
+    t.integer  "empresa_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string   "title"
+    t.string   "question"
+    t.integer  "proyecto_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "genre"
+    t.string   "birthday_year"
+    t.string   "user_type"
+    t.string   "organization"
+    t.string   "opinion"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "userskills", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "skill_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
