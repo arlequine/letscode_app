@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  
   get '/logout', to: 'sessions#logout', as: 'logout'
 
   get '/signin', to: 'sessions#signin_form', as: 'signin_form'
@@ -7,9 +9,12 @@ Rails.application.routes.draw do
 
   get '/proyectos', to: 'sessions#proyectos', as: 'project'
 
- resources :users
+  resources :users
 
-root 'sessions#home'
+  root 'sessions#home'
+
+  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
