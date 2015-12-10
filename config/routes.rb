@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+
+  get '/logout', to: 'sessions#logout', as: 'logout'
+
+  get '/signin', to: 'sessions#signin_form', as: 'signin_form'
+  post '/signin', to: 'sessions#signin', as: 'signin'
+
+  get '/proyectos', to: 'sessions#proyectos', as: 'project'
+
+ resources :users
+
+root 'sessions#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
