@@ -28,8 +28,8 @@ class SessionsController < ApplicationController
 	end
 
 	def project
-		@proyectos = Proyecto.all
-		render 'sessions/proyectos'
+		@proyecto = Proyecto.new
+		render 'proyectos/new'
 	end
 
 end

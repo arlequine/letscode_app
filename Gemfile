@@ -29,6 +29,8 @@ gem 'foundation-rails'
 
 gem 'rails_admin'
 
+gem 'simple_form'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

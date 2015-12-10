@@ -16,5 +16,19 @@
 
  */
 
+<<<<<<< HEAD
+=======
+ .log-in-form {
+  border: 1px solid #cacaca;
+  padding: 1rem;
+  border-radius: 3px; 
+
+}
+
+.down{
+	position: absolute;
+  bottom: -80px;
+}
+>>>>>>> master
 
 

@@ -1,0 +1,41 @@
+<%= simple_form_for @proyecto do |f| %>
+  <% if @proyecto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@proyecto.errors.count, "error") %> prohibited this proyecto from being saved: </h2>
+      <ul>
+        <% @proyecto.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="large-5 columns log-in-form">
+     <%= f.input :title, placeholder: 'Project Title', label: false %>
+     <br>
+     <%= f.input :description, placeholder: 'Description', label: false %>
+     <br>
+     <%= f.input :incentive, placeholder: 'Incentive', label: false %>
+     <br>
+     <%= f.input :result, placeholder: 'Expected Result', label: false %>
+     <br>
+     <%= f.input :num_students, placeholder: 'Students', label: false %>
+     <br>
+     <%= f.input :dead_line, placeholder: 'Deadline', label: false %>
+     <br>
+     <%= "Skills for project:" %>
+     <br>
+     <% for skill in Skill.all %>
+        <div>
+          <%= check_box_tag "proskill[skill_ids][]", skill.id %>
+          <%= skill.name %>
+        </div>
+     <% end %>
+     <br>
+     <div class="controls">
+      <%= f.submit 'Create Project', class: 'button expanded'%>
+     </div>
+  </div>  
+<% end %>
+
+
