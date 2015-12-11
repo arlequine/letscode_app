@@ -13,9 +13,19 @@ Rails.application.routes.draw do
 
   get '/new2', to: 'users#new2', as: 'practicante'
 
+  get '/questions/:id/answer/new', to: 'answers#new', as: 'show_answer'
+  
+  get '/collaboration/collaboration', as: 'collaboration'
+
   resources :users
   resources :skills
   resources :proyectos
+  resources :questions
+  resources :answers
+
+  resources :questions do
+      resources :answers
+    end
 
   root 'sessions#home'
 

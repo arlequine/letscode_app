@@ -1,0 +1,74 @@
+<h1>Collaboration Space</h1>
+
+<% if @errors %>
+  <p><%= @errors %></p>
+<% end %>
+
+<div class="media">
+  <div class="media-body">
+    <table cellspacing="0" width="100%">
+      <thead>
+        <h3>Discussion</h3>
+        <tr class="head_table">
+          <th><h4>Title</h4></th>
+          <th class="reply_right"><h4>Reply</h4></th>
+        </tr>
+      </thead>
+      <tbody>
+			<% @questions.each do |question| %>
+        <% if question.question_type == "discussion" %>
+  				<tr>
+  			      <td><%= question.title %></td>
+  				    <td class="reply_right"><%= link_to 'Reply', show_answer_path(question) %></td> 
+  				</tr>
+        <% end %>
+			<% end %>
+		  </tbody>
+	 </table>
+
+   <table cellspacing="0" width="100%">
+      <thead>
+        <h3>Resource</h3>
+        <tr class="head_table">
+          <th><h4>Title</h4></th>
+          <th class="reply_right"><h4>Reply</h4></th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @questions.each do |question| %>
+        <% if question.question_type == "resource" %>
+          <tr>
+              <td><%= question.title %></td>
+              <td class="reply_right"><%= link_to 'Reply', show_answer_path(question) %></td> 
+          </tr>
+        <% end %>
+      <% end %>
+      </tbody>
+   </table>
+
+   <table cellspacing="0" width="100%">
+      <thead>
+        <h3>Deliverable</h3>
+        <tr class="head_table">
+          <th><h4>Title</h4></th>
+          <th class="reply_right"><h4>Reply</h4></th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @questions.each do |question| %>
+        <% if question.question_type == "deliverable" %>
+          <tr>
+              <td><%= question.title %></td>
+              <td class="reply_right"><%= link_to 'Reply', show_answer_path(question) %></td> 
+          </tr>
+        <% end %>
+      <% end %>
+      </tbody>
+   </table>
+  </div>
+</div>
+
+
+<div class="space">
+	<p class="space-right"><%= link_to 'Post', new_question_path %> </p>
+</div>

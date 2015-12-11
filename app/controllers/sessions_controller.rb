@@ -25,6 +25,7 @@ class SessionsController < ApplicationController
 	end
 
 	def project
+
 		
 		if @user.user_type == "Empresario"
 			@emproyectos = Proyecto.where(user_id: @user.id)
@@ -33,6 +34,11 @@ class SessionsController < ApplicationController
 			@proyectos = Proyecto.all
 			render "inicios/_form2"
 		end
+
+		# @proyecto = Proyecto.new
+		# @questions = Question.all
+		# render 'collaboration/collaboration'
+
 	end
 
 end
