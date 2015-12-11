@@ -1,0 +1,22 @@
+<%= simple_form_for @question do |f| %>
+  <% if @question.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved: </h2>
+      <ul>
+        <% @question.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="large-5 columns log-in-form">
+   <%= f.input :title, placeholder: 'Post Title', label: false %>
+   <br>
+   <%= f.input :question, placeholder: 'Post your Interest', label: false %>
+     <br>
+   <div class="controls">
+    <%= f.submit 'Post', class: 'button expanded'%>
+   </div>
+  </div>
+<% end %>

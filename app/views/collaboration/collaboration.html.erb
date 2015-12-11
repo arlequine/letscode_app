@@ -1,0 +1,31 @@
+<h1>Collaboration Space</h1>
+
+<% if @errors %>
+  <p><%= @errors %></p>
+<% end %>
+
+<div class="media">
+  <div class="media-body">
+    <table cellspacing="0" width="100%">
+      <thead>
+        <tr class="head_table">
+          <th><h4>Title</h4></th>
+          <th><h4>Reply</h4></th>
+        </tr>
+      </thead>
+      <tbody>
+			<% @questions.each do |question| %>
+				<tr>
+			    <td><%= question.title %></td>
+				  <td><%= link_to 'Reply', show_answer_path(question) %></td> 
+				</tr>
+			<% end %>
+		  </tbody>
+	 </table>
+  </div>
+</div>
+
+
+<div class="space">
+	<p class="space-right"><%= link_to 'Reply', new_question_path %> </p>
+</div>
