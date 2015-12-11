@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
 		@user = User.find_by(email: email)
 		if @user.authenticate(params[:session][:password])
 			session[:user_id] = @user.id
-      		inicio_emp
+      	project
 		else
       render 'signin_form'
 		end
@@ -25,8 +25,14 @@ class SessionsController < ApplicationController
 	end
 
 	def project
-		@proyecto = Proyecto.new
-		render 'proyectos/new'
+		
+		if @user.user_type == "Empresario"
+			@emproyectos = Proyecto.where(user_id: @user.id)
+			render "inicios/_form1"
+		else
+			@proyectos = Proyecto.all
+			render "inicios/_form2"
+		end
 	end
 
 end
