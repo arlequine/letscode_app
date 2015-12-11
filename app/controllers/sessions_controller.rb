@@ -8,15 +8,12 @@ class SessionsController < ApplicationController
 	end
 
 	def signin
-		puts "*" * 50
-		p email = params[:session][:email]
-		p password = params[:session][:password]
-		p params
-		puts "*" * 50
+		email = params[:session][:email]
+		password = params[:session][:password]
 		@user = User.find_by(email: email)
 		if @user.authenticate(params[:session][:password])
 			session[:user_id] = @user.id
-      		project
+      		inicio_emp
 		else
       render 'signin_form'
 		end

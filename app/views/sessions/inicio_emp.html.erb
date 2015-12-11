@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+
+<h1>Tus proyectos</h1>
+
+
+<table>
+   <thead>
+	<tr>
+		<th>Proyecto</th>
+		<th>Numero de practicantes</th>
+		<th>Fecha limite</th>
+	</tr>
+   </thead>
+
+
+	<tbody>
+		<% @proyectos.each do |proyecto| %>
+			<tr id="<%= "delete_question_#{question.id}" %>">
+			<td><%= proyecto.title %></td>
+			<td><%= proyecto.num_students %></td>
+			<td><%= proyecto.dead_line %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

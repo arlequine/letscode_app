@@ -1,4 +1,7 @@
 <h1>Empresario, registrate.</h1>
+
+<%= link_to 'Sign in', sign_in_form_path %> 
+
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -64,24 +67,7 @@
 
 
 <br><br>
-<h1>Sign In</h1>
 
-
-<%= form_for(:session, url: signin_path) do |f| %>
-  
-
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
-  </div><br>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
 
 
 
