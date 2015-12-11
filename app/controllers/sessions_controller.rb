@@ -29,7 +29,8 @@ class SessionsController < ApplicationController
 
 	def project
 		@proyecto = Proyecto.new
-		render 'proyectos/new'
+		@questions = Question.all
+		render 'collaboration/collaboration'
 	end
 
 end
