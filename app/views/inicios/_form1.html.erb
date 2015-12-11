@@ -20,7 +20,7 @@
 		<% p "{" * 70 %>
 		<% p @emproyectos %>
 		<% p "{" * 70 %>
-		<% @proyectos.each do |proyecto| %>
+		<% @emproyectos.each do |proyecto| %>
 		  <tr id="<%= "delete_proyecto_#{proyecto.id}" %>">
 		  	<td><%= proyecto.title %></td>
 		  	<td><%= proyecto.description %></td>
