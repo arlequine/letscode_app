@@ -15,8 +15,11 @@ class QuestionsController < ApplicationController
   # POST /users.json
 	def create
     @user = User.find(session[:user_id])
+    # @proyecto = Proyecto.find(params[:id])
+    @proyecto = Proyecto.find(11)
 		@question = Question.new(question_params)
     @user.questions << @question
+    @proyecto.questions << @question
     # @question.update(user_id: @user.id)
 
     respond_to do |format|
@@ -65,6 +68,6 @@ class QuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
-      params.require(:question).permit(:title, :question)
+      params.require(:question).permit(:title, :question, :question_type)
     end
 end
