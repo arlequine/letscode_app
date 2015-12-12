@@ -19,149 +19,15 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
- .log-in-form {
-  border: 1px solid #cacaca;
-  padding: 1rem;
-  border-radius: 3px; 
-
+.top{
+    margin-top: 75px;
 }
 
-.down{
-	position: absolute;
-  bottom: -80px;
+#button{
+  background-color: #222;
 }
 
-.reply_right {
-	float: right;
+#btn{
+    top: 15px;
+    left: -8px;
 }
-
-.center.row {
-	height: 300px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 5%;
-	max-width: 500px;
-}
-
-.signup-panel {
-  padding: 15px;
-}
-
-.signup-panel i {
-  font-size: 30px;
-  line-height: 50px;
-  color: #999;
-}
-
-.signup-panel form input, .signup-panel form span {
-  height: 50px;
-}
-
-.signup-panel .welcome {
-  font-size: 26px;
-  text-align: center;
-  margin-left: 0;
-}
-
-.signup-panel .button {
-  margin-left: 35%;
-}
-
-section.active {
-	padding-top: 75px !important;
-}
-
-p.title {
-	border-bottom: 1px solid #cccccc !important;
-}
-
-.content{
-	height: 450px;
-}
-SCSS
-.center.row {
-  height: 300px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5%;
-  max-width: 500px;
-}
-
-.signup-panel {
-  padding: 15px;
-  i {
-    font-size: 30px;
-    line-height: 50px;
-    color: #999;
-  }
-  form {
-    input, span {
-      height: 50px;
-    }
-  }
-  .welcome {
-    font-size: 26px;
-    text-align: center;
-    margin-left: 0;
-  }
-  .button {
-    margin-left: 35%;
-  }
-}
-
-section.active {
-  padding-top: 75px !important;
-}
-
-p.title {
-  border-bottom: 1px solid #cccccc !important;
-}
-
-.content {
-  height: 450px;
-}
-
-.center.row {
-  height: 300px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5%;
-  max-width: 500px;
-}
-
-.signup-panel {
-  padding: 15px;
-  i {
-    font-size: 30px;
-    line-height: 50px;
-    color: #999;
-  }
-  form {
-    input, span {
-      height: 50px;
-    }
-  }
-  .welcome {
-    font-size: 26px;
-    text-align: center;
-    margin-left: 0;
-  }
-  .button {
-    margin-left: 35%;
-  }
-}
-
-section.active {
-  padding-top: 75px !important;
-}
-
-p.title {
-  border-bottom: 1px solid #cccccc !important;
-}
-
-.content {
-  height: 450px;
-}
-
-
