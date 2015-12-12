@@ -9,9 +9,9 @@ Rails.application.routes.draw do
 
   #get '/proyectos', to: 'sessions#proyectos', as: 'project'
 
-  get '/new1', to: 'users#new1', as: 'empresa'
+  # get '/new1', to: 'users#new1', as: 'empresa'
 
-  get '/new2', to: 'users#new2', as: 'practicante'
+  # get '/new2', to: 'users#new2', as: 'practicante'
 
   get '/questions/:id/answer/new', to: 'answers#new', as: 'show_answer'
   
@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   resources :proyectos
   resources :questions
   resources :answers
+  
 
   resources :questions do
       resources :answers

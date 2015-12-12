@@ -1,6 +1,6 @@
 <%= link_to 'Sign in', sign_in_form_path %> 
-<h1>Practicante, registrate.</h1>
 
+<h1><%= "#{user_type} , registrate." %></h1>
 
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
@@ -39,6 +39,13 @@
       <%= f.text_field :birthday_year %>
     </div>
 
+    <% if user_type == "Empresario" %>
+	    <div class="field">
+	      <%= f.label :organization %><br>
+	      <%= f.text_field :organization %>
+	    </div>
+    <% end %>
+
     <div class="field">
       <%= f.label :opinion %><br>
       <%= f.text_field :opinion %>
@@ -46,7 +53,7 @@
 
     <div class="hide">
       <%= f.label :user_type %><br>
-      <%= f.text_field :user_type, :value => 'Practicante', :disabled => false%>
+      <%= f.text_field :user_type, :value => user_type, :disabled => false%>
     </div>
 
      <div class="field">
@@ -58,5 +65,3 @@
     </div>
   <% end %>
 </div>
-
-
