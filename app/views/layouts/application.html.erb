@@ -6,50 +6,56 @@
 
     <title><%= content_for?(:title) ? yield(:title) : "Welcome | LetsCode" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
-
-  <body>
-    <nav class="top-bar foundation-bar" data-topbar>
-      <ul class="title-area">
-        <li class="name">
-          <h1>
-            <a href="/">Let's code!!</a>
-          </h1>
-        </li>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <ul class="nav navbar-nav">
+      <li><%= link_to 'Let`s Code!!', root_path %></li>
       </ul>
-      <section class="top-bar-section">
-        <ul class="right">
-          <% if current_user %>
-          <li class="has-dropdown active">
-            <%= link_to 'Profile', current_user %>
-            <ul class="dropdown">
-              <li><%= link_to 'Cerrar sesión', logout_path %></li>
-            </ul>
-          </li>
-          <% else %>
-          <li><%= link_to 'Sign in', signin_path  %></li>
-          <% end %>
-         </ul>
-      </section>
+      <% if current_user %>
+      <ul class="nav navbar-nav">
+      <li><%= link_to 'Sign Out', logout_path %></li>
+      </ul>
+      <div id="btn" class="btn-group pull-right right-nav">
+        <button type="button" class="btn btn-mini dropdown-toggle" data-toggle="dropdown" id="button">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><%= current_user.name %><span class="caret"></span></a>
+        </button>
+        <ul  class="dropdown-menu">
+          <li>A</li>
+          <li>B</li>
+          <li>C</li>
+        </ul>
+      </div>
+      <% else %>
+      <ul class="nav navbar-nav">
+      <li><%= link_to 'Sign In', signin_path %></li>
+     </ul>
+      <% end %>
     </nav>
-    <div class="row">
-      <div class="large-12 columns">
-        <div class="container">
-
-
-
-          <% if session[:errors] %>
-            <p><%= session[:errors] %></p>
-            <% session[:errors].clear %>
-          <% end %>
-
-    <%= yield %>
-  </div>
-  </div>
+   <% if flash[:notice] %>
+    <div class="alert alert-success">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <%= flash[:notice] %>
+    </div>
+   <% elsif flash[:error] %>
+    <div class="alert alert-error">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <%= flash[:error] %>
+    </div> 
+   <% elsif flash[:alert] %>
+    <div class="alert">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <%= flash[:alert] %>
+    </div> 
+   <% end %>  
+   <div class="top">
+     <%= yield %>
+   </div>
 </div>
-  </body>
+
+</body>
 </html>
