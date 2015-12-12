@@ -8,8 +8,8 @@ class SessionsController < ApplicationController
 	end
 
 	def signin
-		email = params[:session][:email]
-		password = params[:session][:password]
+		p email = params[:session][:email]
+	  p password = params[:session][:password]
 		@user = User.find_by(email: email)
 		if @user.authenticate(params[:session][:password])
 			session[:user_id] = @user.id

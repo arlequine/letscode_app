@@ -17,10 +17,6 @@
 	</thead>
 
 	<tbody>
-		<% p "{" * 70 %>
-		<% p @emproyectos %>
-		<p>fixed errors</p>
-		<% p "{" * 70 %>
 		<% @emproyectos.each do |proyecto| %>
 		  <tr id="<%= "delete_proyecto_#{proyecto.id}" %>">
 		  	<td><%= proyecto.title %></td>
