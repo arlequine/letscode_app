@@ -13,20 +13,20 @@
   </head>
 
   <body>
-    <nav class="top-bar foundation-bar" data-topbar>
-      <ul class="title-area">
+    <nav class="navbar navbar-inverse">
+      <ul class="container-fluid">
         <li class="name">
           <h1>
             <a href="/">Let's code!!</a>
           </h1>
         </li>
       </ul>
-      <section class="top-bar-section">
+      <section class="navbar-header">
         <ul class="right">
           <% if current_user %>
           <li class="has-dropdown active">
             <%= link_to 'Profile', current_user %>
-            <ul class="dropdown">
+            <ul class="dropdown-menu">
               <li><%= link_to 'Cerrar sesión', logout_path %></li>
             </ul>
           </li>
