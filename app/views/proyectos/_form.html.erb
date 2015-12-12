@@ -1,41 +1,84 @@
-<%= simple_form_for @proyecto do |f| %>
-  <% if @proyecto.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@proyecto.errors.count, "error") %> prohibited this proyecto from being saved: </h2>
-      <ul>
-        <% @proyecto.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+<div>
+  <%= simple_form_for @proyecto do |f| %>
+    <% if @proyecto.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@proyecto.errors.count, "error") %> prohibited this proyecto from being saved: </h2>
+        <ul>
+          <% @proyecto.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    
+    <fieldset class="form-group">
+      <label for="Title">Project Title</label>
+      <%= f.input :title, placeholder: 'Project Title', label: false %>
+      <small class="text-muted"></small>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label for="description">Description</label>
+      <%= f.input :description, placeholder: 'Description', label: false %>
+       <small class="text-muted">Please a brief description of your project</small>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label for="incentive">Incentive</label>
+       <%= f.input :incentive, placeholder: 'Incentive', label: false %>
+       <small class="text-muted">Please a brief description of your incentives for learners of this project</small>
+    </fieldset>
+    
+    <fieldset class="form-group">
+      <label for="expected result">Expected Result</label>
+       <%= f.input :result, placeholder: 'Expected Result', label: false %>
+       <small class="text-muted">Please a brief description of your expected result for this project</small>
+    </fieldset>
+      
+    <fieldset class="form-group">
+      <label for="expected result">Expected Result</label>
+       <%= f.input :result, placeholder: 'Expected Result', label: false %>
+       <small class="text-muted">Please a brief description of your expected result for this project</small>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label for="limit">Limit of Students</label>
+      <%= f.input :num_students, placeholder: 'Students', label: false %>
+       <small class="text-muted">How many learners can participate for this project</small>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label for="deadline">Project deadline</label>
+       <%= f.input :dead_line, placeholder: 'Deadline', label: false %>
+       <small class="text-muted">When this project has to be completed</small>
+    </fieldset>
+    
+    
+    <div class="checkbox">
+     
+      <%= "Skills for project:" %>
+      
+       <% for skill in Skill.all %>
+          <div>
+             <label>
+               <%= check_box_tag "proskill[skill_ids][]", skill.id %>
+               <%= skill.name %>
+             </label>
+          </div>
+       <% end %>
+       <br>
     </div>
+    
+    <div class="controls">
+      <%= f.submit 'Create Project', class: 'btn btn-primary'%>
+    </div>
+   
   <% end %>
-  
-  <div class="large-5 columns log-in-form">
-     <%= f.input :title, placeholder: 'Project Title', label: false %>
-     <br>
-     <%= f.input :description, placeholder: 'Description', label: false %>
-     <br>
-     <%= f.input :incentive, placeholder: 'Incentive', label: false %>
-     <br>
-     <%= f.input :result, placeholder: 'Expected Result', label: false %>
-     <br>
-     <%= f.input :num_students, placeholder: 'Students', label: false %>
-     <br>
-     <%= f.input :dead_line, placeholder: 'Deadline', label: false %>
-     <br>
-     <%= "Skills for project:" %>
-     <br>
-     <% for skill in Skill.all %>
-        <div>
-          <%= check_box_tag "proskill[skill_ids][]", skill.id %>
-          <%= skill.name %>
-        </div>
-     <% end %>
-     <br>
-     <div class="controls">
-      <%= f.submit 'Create Project', class: 'button expanded'%>
-     </div>
-  </div>  
-<% end %>
+
+</div>
+
+
+
+
 
 

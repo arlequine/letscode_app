@@ -1,40 +1,22 @@
-<div class="center row">
-  <div class="section-container tabs" data-section="tabs">
-    <section class="active">
-      <p class="title" data-section-title>Sign In</p>
-      <div class="content" data-section-content>
-        <p>
-          <div class="row">
-            <div class="large-12 columns">
-              <div class="signin-panel">
-                <p class="welcome">Welcome!</p>
-                  <%= form_for(:session, url: signin_path) do |f| %>
-                    <div class="row collapse">
-                      <div class="small-2  columns">
-                        <span class="prefix"><i class="fi-mail"></i></span>
-                      </div>
-                      <div class="small-10  columns">
-                         <%= f.text_field :email %>
-                      </div>
-                    </div>
-                    <div class="row collapse">
-                      <div class="small-2 columns ">
-                        <span class="prefix"><i class="fi-lock"></i></span>
-                      </div>
-                      <div class="small-10 columns ">
-                        <%= f.password_field :password %>
-                      </div>
-                    </div>
-                    <div class = "actions">
-                      <%= f.submit 'Sign In', class: 'button expanded'%>
-                    </div>
-                  <% end %>
-              </div>
-            </div>
-           </div>
-        </p>
-      </div>
-    </section>
+<% provide(:title, "Log in") %>
+
+<div class="row">
+  <div class="col.med-6 col-md-offset-4">
+    
+ 
+    <%= form_for(:session, url: signin_path) do |f| %>
+       
+        <%= f.label :email %>
+        <%= f.email_field :email, class: 'form-control' %>
+        
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'form-control' %>
+        
+       <br>
+        <%= f.submit 'Log in', class: 'btn btn-primary btn-block'%>
+       
+    <% end %>
+
+    <p>New user? <%= link_to "Sign up now!", new_user_path %></p>
   </div>
 </div>
-
