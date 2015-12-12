@@ -18,7 +18,7 @@
 			<% @questions.each do |question| %>
         <% if question.question_type == "discussion" %>
   				<tr>
-  			      <td><%= question.title %></td>
+  			      <td><%= link_to question.title, show_answers_question_path(question) %></td>
   				    <td class="reply_right"><%= link_to 'Reply', show_answer_path(question) %></td> 
   				</tr>
         <% end %>
