@@ -13,11 +13,11 @@
 <body>
   <div class="container">
     <nav class="navbar navbar-inverse navbar-fixed-top">
-      <ul class="nav navbar-nav">
-      <li><%= link_to 'Let`s Code!!', root_path %></li>
+      <ul id="title" class="nav navbar-nav">
+      <li><%= link_to 'Let´s Code!', root_path %></li>
       </ul>
       <% if current_user %>
-      <ul class="nav navbar-nav">
+      <ul id="logout" class="nav navbar-nav">
       <li><%= link_to 'Sign Out', logout_path %></li>
       </ul>
       <div id="btn" class="btn-group pull-right right-nav">
@@ -31,7 +31,7 @@
         </ul>
       </div>
       <% else %>
-      <ul class="nav navbar-nav">
+      <ul id="signin" class="nav navbar-nav">
       <li><%= link_to 'Sign In', signin_path %></li>
      </ul>
       <% end %>

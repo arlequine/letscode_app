@@ -31,3 +31,108 @@
     top: 15px;
     left: -8px;
 }
+#home a{
+  color: #008CBA;
+}
+
+#title{
+  font-size: 20px;
+}
+#title a {
+  color: #FFF;
+}
+#title a:hover{
+  color: #9d9d9d;
+}
+
+#signin a {
+  color: #FFF;
+}
+#signin a:hover{
+  color: #9d9d9d;
+}
+
+#logout a {
+  color: #FFF;
+}
+#logout a:hover{
+  color: #9d9d9d;
+}
+#fondo{
+    background: url("http://ambartec.com/wp-content/uploads/2015/08/ambartec-estudios-de-impacto-ambiental-y-estudios-de-paisaje.jpg") repeat-x transparent 100% 18%;
+    background-size: 1745px 520px;
+    background-repeat: no-repeat;
+}
+
+#imgemp{
+    width: 125px;
+    height: 116px;
+}
+
+#texthome{
+  text-align: center;
+}
+
+#block1{
+  text-align: center;
+  margin-top: 322px;
+  display: block;
+  float: left;
+  width: 365px;
+}
+
+#block2{
+  text-align: center;
+  margin-top: 319px;
+  display: table-column;
+  float: right;
+  width: 370px;
+}
+
+#imgpra{
+  width: 186px;
+  height: 116px;
+}
+
+.ghost {
+
+    display: inline-block;
+    position: relative;
+
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+
+    font-size: 3em;
+    letter-spacing: 0.1em;
+    color: #ffffff;
+    text-decoration: none;
+
+    border: 0.15em solid #fff;
+
+    -webkit-transition: color 300ms, background 500ms, border-color 700ms;
+    transition: color 300ms, background 500ms, border-color 700ms;
+}
+
+footer {
+  background-color:#494949;
+    color:#ddd;
+    min-height:100px;
+    padding-top:20px;
+    padding-bottom:40px;
+}
+
+footer .nav>li>a {
+    padding:3px;
+    color:#ccc;
+}
+
+footer .nav>li>a:hover {
+    background-color:transparent;
+  color:#fff;
+}
+
+
+
+
+
