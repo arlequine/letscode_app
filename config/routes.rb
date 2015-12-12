@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   
   get '/collaboration/collaboration', as: 'collaboration'
 
+  get '/questions/:id/collaboration/collaboration', to: 'collaboration#answers_question', as: 'show_answers_question'
+
   resources :users
   resources :skills
   resources :proyectos

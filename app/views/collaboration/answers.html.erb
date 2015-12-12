@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Comments for : <%= @question.title %></h2>
+
+<% @answers.each do |answer| %>
+  <p> <%= answer.answer %> <p>
+  <p> <%= answer.responder.name %> </p>
+<% end %>
