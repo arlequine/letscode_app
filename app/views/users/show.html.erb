@@ -7,5 +7,15 @@
 	<%= @user.email %>
 </p>
 
-<%= link_to 'Sign in', sign_in_form_path %> 
+<% if current_user.user_type == "Practicante" %>
+	<ul>
+	<% current_user.proyectos.each do |project|  %>
+	  <li><%= "#{project.title} :#{current_user.status_of_project(project)}" %></li>
+	<% end %>
+	</ul>
+<% end %>
+
 <%= link_to 'Back', users_path %>
+
+
+

@@ -9,6 +9,13 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
   end
+
+
+  def new
+    @user_type = params[:user_type]
+    @user = User.new
+  end
+
 	# GET /users/new
 	def new1
     @user = User.new

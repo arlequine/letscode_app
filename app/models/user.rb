@@ -12,4 +12,14 @@ class User < ActiveRecord::Base
   has_many :userskills
   has_many :proyectos
   has_secure_password
+
+
+
+
+
+  def status_of_project(project)
+    postulation = self.postulations.where(proyecto_id:project.id)
+    postulation.first.status
+  end
+
 end
