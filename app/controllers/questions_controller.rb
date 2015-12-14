@@ -9,14 +9,15 @@ class QuestionsController < ApplicationController
   end
 	# GET /questions/new
 	def new
+    @proyecto = Proyecto.find(params[:proyecto_id])
     @question = Question.new
 	end
   # POST /users
   # POST /users.json
 	def create
     @user = User.find(session[:user_id])
-    # @proyecto = Proyecto.find(params[:id])
-    @proyecto = Proyecto.find(2)
+    @proyecto = Proyecto.find(params[:proyecto_id])
+    # @proyecto = Proyecto.find(2)
 		@question = Question.new(question_params)
     @user.questions << @question
     @proyecto.questions << @question

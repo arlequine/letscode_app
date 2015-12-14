@@ -2,6 +2,7 @@ class CollaborationController < ApplicationController
 	
 	def collaboration
 	  @questions = Question.where(proyecto_id: params[:id])
+	  @proyecto = Proyecto.find(params[:id]).id
 	end
 
 	def answers_question

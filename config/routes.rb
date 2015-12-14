@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+  
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
@@ -18,12 +20,15 @@ Rails.application.routes.draw do
 
   get '/proyecto/:id/users/show', to: 'postulations#create', as: 'request'
 
+  
   resources :users
   resources :skills
   resources :proyectos
-  resources :questions
   resources :answers
   
+  resources :proyectos do
+    resources :questions
+  end
 
   resources :questions do
       resources :answers
