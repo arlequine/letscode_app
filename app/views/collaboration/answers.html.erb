@@ -1,8 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h2>Comments for : <%= @question.title %></h2>
+<div class="page-header">
+  <h1>Comments for : <small><%= @question.title %></small></h1>
+</div>
+
 
 <% @answers.each do |answer| %>
-  <p> <%= answer.answer %> <p>
-  <p> <%= answer.responder.name %> </p>
+  <div class="status row">
+      <div class="span7">
+		  <strong> <%= answer.answer %></strong>
+		  <p> <%= answer.responder.name %> </p>
+      </div>
+  </div>
 <% end %>

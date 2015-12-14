@@ -16,7 +16,7 @@ class QuestionsController < ApplicationController
 	def create
     @user = User.find(session[:user_id])
     # @proyecto = Proyecto.find(params[:id])
-    @proyecto = Proyecto.find(11)
+    @proyecto = Proyecto.find(2)
 		@question = Question.new(question_params)
     @user.questions << @question
     @proyecto.questions << @question

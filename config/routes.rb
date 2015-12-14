@@ -5,19 +5,18 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#logout', as: 'logout'
 
   get '/signin', to: 'sessions#sign_in_form', as: 'sign_in_form'
+
   post '/signin', to: 'sessions#signin', as: 'signin'
-
-  #get '/proyectos', to: 'sessions#proyectos', as: 'project'
-
-  # get '/new1', to: 'users#new1', as: 'empresa'
-
-  # get '/new2', to: 'users#new2', as: 'practicante'
 
   get '/questions/:id/answer/new', to: 'answers#new', as: 'show_answer'
   
   get '/collaboration/collaboration', as: 'collaboration'
 
+  get '/proyecto/:id/collaboration/collaboration', to: 'collaboration#collaboration', as: 'show_collaboration_space'
+  
   get '/questions/:id/collaboration/collaboration', to: 'collaboration#answers_question', as: 'show_answers_question'
+
+  get '/proyecto/:id/users/show', to: 'postulations#create', as: 'request'
 
   resources :users
   resources :skills

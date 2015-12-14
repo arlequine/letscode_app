@@ -1,11 +1,11 @@
 class CollaborationController < ApplicationController
 	
 	def collaboration
-		@questions = Question.all
+	  @questions = Question.where(proyecto_id: params[:id])
 	end
 
 	def answers_question
-		@answers = Question.find(params[:id]).answers
+	  @answers = Question.find(params[:id]).answers
 	  @question = Question.find(params[:id])
 	  render 'collaboration/answers'
 	end
