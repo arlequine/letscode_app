@@ -58,8 +58,26 @@
       <%= f.label :password %><br>
       <%= f.password_field :password %>
     </div><br>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
+
+
+      <div class="checkbox">
+       
+        <%= "Your Skills:" %>
+        
+         <% for skill in Skill.all %>
+            <div>
+               <label>
+                 <%= check_box_tag "userkill[skill_ids][]", skill.id %>
+                 <%= skill.name %>
+               </label>
+            </div>
+         <% end %>
+         <br>
+      </div>
+      
+      <div class="controls">
+        <%= f.submit 'Create User', class: 'btn btn-primary'%>
+      </div>
   <% end %>
+
 </div>
