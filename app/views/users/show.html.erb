@@ -6,7 +6,11 @@
 <% if current_user.user_type == "empresa" %>
   <p><%= link_to 'New Project', new_proyecto_path, class: "btn btn-success"  %></p>
 <% end %>
-<h3>Your Projects:</h3>
+<% if current_user.user_type == "empresa" %>
+<h3>YOUR PROJECTS</h3>
+<% else %>
+<h3>ALL PROJECTS:</h3>
+<% end %>
 <div class="media">
   <div class="media-body">
 	<% if current_user.user_type == "practicante" %>
@@ -64,7 +68,7 @@
 
 				<% current_user.proyectos.each do |proyecto| %>
 				  <tr id="<%= "delete_proyecto_#{proyecto.id}" %>">
-				  	<td><%= proyecto.title %></td>
+				  	<td><%= link_to proyecto.title, show_collaboration_space_path(proyecto) %></td>
 				  	<td><%= proyecto.description %></td>
 				  	<td><%= proyecto.incentive %></td>
 				  	<td><%= proyecto.result %></td>
