@@ -1,74 +1,70 @@
-<h1>Collaboration Space</h1>
+<div class="page-header">
+  <h1>Collaboration Space</h1>
+</div>
 
 <% if @errors %>
   <p><%= @errors %></p>
 <% end %>
 
-<div class="media">
-  <div class="media-body">
-    <table cellspacing="0" width="100%">
-      <thead>
-        <h3>Discussion</h3>
-        <tr class="head_table">
-          <th><h4>Title</h4></th>
-          <th class="reply_right"><h4>Reply</h4></th>
-        </tr>
-      </thead>
-      <tbody>
-			<% @questions.each do |question| %>
-        <% if question.question_type == "discussion" %>
-  				<tr>
-  			      <td><%= link_to question.title, show_answers_question_path(question) %></td>
-  				    <td class="reply_right"><%= link_to 'Reply', show_answer_path(question) %></td> 
-  				</tr>
-        <% end %>
-			<% end %>
-		  </tbody>
-	 </table>
 
-   <table cellspacing="0" width="100%">
-      <thead>
-        <h3>Resource</h3>
-        <tr class="head_table">
-          <th><h4>Title</h4></th>
-          <th class="reply_right"><h4>Reply</h4></th>
-        </tr>
-      </thead>
-      <tbody>
-      <% @questions.each do |question| %>
-        <% if question.question_type == "resource" %>
-          <tr>
-              <td><%= question.title %></td>
-              <td class="reply_right"><%= link_to 'Reply', show_answer_path(question) %></td> 
-          </tr>
-        <% end %>
-      <% end %>
-      </tbody>
-   </table>
+<%= link_to 'New Post', new_question_path, class: "btn btn-success" %> 
 
-   <table cellspacing="0" width="100%">
-      <thead>
-        <h3>Deliverable</h3>
-        <tr class="head_table">
-          <th><h4>Title</h4></th>
-          <th class="reply_right"><h4>Reply</h4></th>
-        </tr>
-      </thead>
-      <tbody>
-      <% @questions.each do |question| %>
-        <% if question.question_type == "deliverable" %>
-          <tr>
-              <td><%= question.title %></td>
-              <td class="reply_right"><%= link_to 'Reply', show_answer_path(question) %></td> 
-          </tr>
-        <% end %>
-      <% end %>
-      </tbody>
-   </table>
-  </div>
-</div>
+<h3>Discussions</h3>
+<% @questions.each do |question| %>
+  <% if question.question_type == "discussion" %>
+		<div class="status row">
+      <div class="span7">
+        <strong><%= current_user.name %> <%= current_user.last_name %></strong>
+        <p><%= question.title %></p>
+        <div class="meta">
+          <%= link_to time_ago_in_words(question.created_at) + " ago", show_answers_question_path(question) %>
+          <span class="admin">
+	          <%= link_to 'Reply', show_answer_path(question) %>
+          </span>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+<h3>Resources</h3>
+<% @questions.each do |question| %>
+  <% if question.question_type == "resource" %>
+    <div class="status row">
+      <div class="span7">
+        <strong><%= current_user.name %> <%= current_user.last_name %></strong>
+        <p><%= question.title %></p>
+        <div class="meta">
+          <%= link_to time_ago_in_words(question.created_at) + " ago", show_answers_question_path(question) %>
+          <span class="admin">
+            <%= link_to 'Reply', show_answer_path(question) %>
+          </span>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+<h3>Deliverables</h3>
+<% @questions.each do |question| %>
+  <% if question.question_type == "deliverable" %>
+    <div class="status row">
+      <div class="span7">
+        <strong><%= current_user.name %> <%= current_user.last_name %></strong>
+        <p><%= question.title %></p>
+        <div class="meta">
+          <%= link_to time_ago_in_words(question.created_at) + " ago", show_answers_question_path(question) %>
+          <span class="admin">
+            <%= link_to 'Reply', show_answer_path(question) %>
+          </span>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+	
 
 
-<div class="space">
-	<p class="space-right"><%= link_to 'Post', new_question_path %> </p>
-</div>
+
+
+

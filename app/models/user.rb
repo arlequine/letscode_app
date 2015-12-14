@@ -22,4 +22,6 @@ class User < ActiveRecord::Base
     postulation.first.status
   end
 
+
+
 end

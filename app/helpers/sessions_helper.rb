@@ -9,4 +9,12 @@ module SessionsHelper
 	def logged_in?
 		!current_user.nil?
 	end
+
+	def current_project(id)
+		@project = Proyecto.find(id)
+	end
+
+	def all_projects
+        projects = Proyecto.all
+    end
 end

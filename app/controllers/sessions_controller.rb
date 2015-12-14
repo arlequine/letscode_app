@@ -8,14 +8,14 @@ class SessionsController < ApplicationController
 	end
 
 	def signin
-		p email = params[:session][:email]
-	  p password = params[:session][:password]
+		email = params[:session][:email]
+	    password = params[:session][:password]
 		@user = User.find_by(email: email)
 		if @user.authenticate(params[:session][:password])
 			session[:user_id] = @user.id
-      	project
+      	    project
 		else
-      render 'signin_form'
+            render 'signin_form'
 		end
 	end
 
@@ -26,13 +26,17 @@ class SessionsController < ApplicationController
 
 	def project
 
-		
-		if @user.user_type == "Empresario"
-			@emproyectos = Proyecto.where(user_id: @user.id)
-			render "inicios/_form1"
+		puts "****"
+		puts @user.user_type
+		if @user.user_type == "empresa"
+			#@emproyectos = Proyecto.where(empresa_id: @user.id)
+			#p @emproyectos
+			#@user_type = "Empresario"
+			render '/users/show'
 		else
-			@proyectos = Proyecto.all
-			render "inicios/_form2"
+			#@proyectos = Proyecto.all
+			#@user_type = "Practicante"
+			render '/users/show'
 		end
 
 		# @proyecto = Proyecto.new

@@ -1,21 +1,86 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-	<strong>Name:</strong>
-	<%= @user.name %>
-	<strong>Email:</strong>
-	<%= @user.email %>
-</p>
-
-<% if current_user.user_type == "Practicante" %>
-	<ul>
-	<% current_user.proyectos.each do |project|  %>
-	  <li><%= "#{project.title} :#{current_user.status_of_project(project)}" %></li>
-	<% end %>
-	</ul>
+<div class="page-header">
+  <h1>Welcome <%= current_user.name %></h1>
+</div>
+<% if current_user.user_type == "empresa" %>
+  <p><%= link_to 'New Project', new_proyecto_path, class: "btn btn-success"  %></p>
 <% end %>
+<h3>Your Projects:</h3>
+<div class="media">
+  <div class="media-body">
+	<% if current_user.user_type == "practicante" %>
+		
+	    <table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Project Title</th>
+					<th>Project Status</th>
+					<th colspan="3"></th>
+				</tr>
+			</thead>
+			<tbody>
+                <% all_projects.each do |project| %>
+                    <% @find = false %>
+				    <% current_user.postulations.each do |postulation|  %>
+					  <tr>
+					  <% if postulation.proyecto_id == project.id %>
+					      <% project = current_project(postulation.proyecto_id) %>
+					      <% @find = true %>
+						  <td><%= project.title %></td>
+						  <% if project.status_of_project(project) == "aceptado" %>
+						    <td><%= link_to project.status_of_project(project), show_collaboration_space_path(project), class: 'btn btn-success btn-sm' %></td>
+						  <% end %>
+						  <% if project.status_of_project(project) == "postulado" %>
+						    <td><button type="button" class="btn btn-warning btn-sm"><%= project.status_of_project(project) %></button></td>
+						  <% end %>
+					  <% end %>
+					  </tr> 
+					<% end %>
+					<% if @find == false %>
+						<td><%= project.title %></td>
+						<td><%= link_to ' join ', request_path(project),class: "btn btn-danger btn-sm" %></td>	
+					<% end %>
+				<% end %>		
+			</tbody>
+		</table>
+		
+	<% else %>
 
-<%= link_to 'Back', users_path %>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Project Title</th>
+					<th>Project Description</th>
+					<th>Incentive</th>
+					<th>Project Result</th>
+					<th>Students Accepted</th>
+					<th>Project Deadline</th>
+					<th colspan="3"></th>
+				</tr>
+			</thead>
+
+			<tbody>
+
+				<% current_user.proyectos.each do |proyecto| %>
+				  <tr id="<%= "delete_proyecto_#{proyecto.id}" %>">
+				  	<td><%= proyecto.title %></td>
+				  	<td><%= proyecto.description %></td>
+				  	<td><%= proyecto.incentive %></td>
+				  	<td><%= proyecto.result %></td>
+				  	<td><%= proyecto.num_students %></td>
+				  	<td><%= proyecto.dead_line %></td>
+				  	<td><%= link_to 'Show', proyecto, class: 'btn  btn-default btn-sm' %></td>
+				  	<td><%= link_to 'Edit', edit_proyecto_path(proyecto), class: 'btn btn-success btn-sm' %></td>
+				  	<td><%= link_to 'Destroy', proyecto, method: :delete, class: 'btn btn-danger btn-sm', data: { confirm: 'Are you sure?' }, :remote => true %></td>
+				  </tr>
+				<% end %>
+			</tbody>
+		</table>
+	<% end %>
+  </div>
+</div>
+
 
 
 
