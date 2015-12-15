@@ -41,13 +41,25 @@ class ProyectosController < ApplicationController
 
   # GET /proyectos/1/edit
   def edit
+   @proyecto = Proyecto.find(session[:proyecto_id])
   end
 
   #PUT /proyectos/1
   def update
+    p '*' * 50
+    p @user = User.find(session[:user_id])
+
+    p '*' * 50
+    #it gets values from skill 
+    params[:proskill][:skill_ids] ||= []
+    skills = params[:proskill][:skill_ids]
 
     respond_to do |format|
       if @proyecto.update(proyecto_params)
+          skills.each do |skill|
+            @proskill = Proskill.new(skill_id: skill, proyecto_id: @proyecto.id)
+            @proskill.save
+          end
         format.html { redirect_to @proyecto, notice: 'Proyecto was successfully updated.' }
         format.json { render :show, status: :ok, location: @proyecto }
       else

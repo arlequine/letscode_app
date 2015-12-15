@@ -48,20 +48,18 @@
     </fieldset>
     
     
-    <div class="checkbox">
-     
-      <%= "Skills for project:" %>
-      
-       <% for skill in Skill.all %>
-          <div>
-             <label>
-               <%= check_box_tag "proskill[skill_ids][]", skill.id %>
-               <%= skill.name %>
-             </label>
-          </div>
-       <% end %>
-       <br>
-    </div>
+
+
+      <div class="checkbox">
+       
+        <%= "Skills for project:" %>
+        
+        <% Skill.all.each do |skill| %>
+        <li><%= check_box_tag "proskill[skill_ids][]", skill.id, @proyecto.skills.include?(skill) %><%= skill.name %></li>
+        <%end%>
+         <br>
+      </div>
+
     
     <div class="controls">
       <%= f.submit 'Create Project', class: 'btn btn-primary'%>

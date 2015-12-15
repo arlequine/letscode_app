@@ -64,14 +64,9 @@
        
         <%= "Your Skills:" %>
         
-         <% for skill in Skill.all %>
-            <div>
-               <label>
-                 <%= check_box_tag "userkill[skill_ids][]", skill.id %>
-                 <%= skill.name %>
-               </label>
-            </div>
-         <% end %>
+        <% Skill.all.each do |skill| %>
+        <li><%= check_box_tag "user[skill_ids][]", skill.id, @user.skills.include?(skill) %><%= skill.name %></li>
+        <%end%>
          <br>
       </div>
       
