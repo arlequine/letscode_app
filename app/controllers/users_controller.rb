@@ -28,10 +28,12 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
 	def create
+    p '*' * 50 
+    p params
 		@user = User.new(user_params)
 
-    params[:userkill][:skill_ids] ||= []
-    skills = params[:userkill][:skill_ids]
+    params[:user][:skill_ids] ||= []
+    skills = params[:user][:skill_ids]
 
     respond_to do |format|
       if @user.save
@@ -51,17 +53,25 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
 	def edit
+    @user = User.find(session[:user_id])
 	end
 
   #PUT /users/1
 	def update
 
-     puts @user = User.find(session[:user_id])
-     puts userskills = Userskill.find_by(skill_id: skill, user_id: @user.id)
+     @user = User.find(session[:user_id])
      @user.userskills
+     p '*' *50
+     p params[:user][:skill_ids] ||= []
+     p '*' *50
+     skills = params[:user][:skill_ids]
     
     respond_to do |format|
       if @user.update(user_params)
+          skills.each do |skill|
+            @userskills = Userskill.new(skill_id: skill, user_id: @user.id)
+            @userskills.save
+          end
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
