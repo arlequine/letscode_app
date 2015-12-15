@@ -16,7 +16,10 @@
    <%= f.input :question, placeholder: 'Post your Interest', label: false %>
    <br>
   <%= f.input :question_type, priority: [ "discussion" ], collection: [ "discussion", "resource", "deliverable"], label: "Post type" %>
+   <br>
+  <%= f.input :attachment, input_html: { hidden: true }, label: 'Upload Attachment' %>
    <div class="controls">
+  <br>
     <%= f.submit 'Post', class: 'button expanded'%>
    </div>
   </div>
