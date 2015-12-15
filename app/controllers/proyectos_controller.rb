@@ -41,7 +41,7 @@ class ProyectosController < ApplicationController
 
   # GET /proyectos/1/edit
   def edit
-   @proyecto = Proyecto.find(session[:proyecto_id])
+   # @proyecto = Proyecto.find(session[:proyecto_id])
   end
 
   #PUT /proyectos/1
