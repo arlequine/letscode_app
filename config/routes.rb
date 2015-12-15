@@ -20,6 +20,9 @@ Rails.application.routes.draw do
 
   get '/proyecto/:id/users/show', to: 'postulations#create', as: 'request'
 
+  get '/proyecto/:id/users/:user_id/practicantes/show', to: 'postulations#update', as: 'update_request'
+
+  get '/proyecto/:id/practicantes/show', to: 'practicantes#show', as: 'show_participantes_proyecto'
   
   resources :users
   resources :skills
