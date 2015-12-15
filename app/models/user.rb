@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   has_many :userskills
   has_many :proyectos
   has_many :skills, through: :userskills
+  accepts_nested_attributes_for :skills
   has_secure_password
 
 

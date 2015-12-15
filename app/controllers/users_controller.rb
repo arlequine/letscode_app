@@ -52,16 +52,19 @@ class UsersController < ApplicationController
 
 
   # GET /users/1/edit
-  def edit
+
+	def edit
     @user = User.find(session[:user_id])
-  end
+	end
 
   #PUT /users/1
   def update
 
      @user = User.find(session[:user_id])
      @user.userskills
+
      p params[:user][:skill_ids] ||= []
+
      skills = params[:user][:skill_ids]
     
     respond_to do |format|
