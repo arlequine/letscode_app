@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
     @users = User.all
@@ -16,10 +16,10 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-	# GET /users/new
-	def new1
+  # GET /users/new
+  def new1
     @user = User.new
-	end
+  end
 
   def new2
     @user = User.new
@@ -27,11 +27,13 @@ class UsersController < ApplicationController
  
   # POST /users
   # POST /users.json
-	def create
-		@user = User.new(user_params)
+  def create
+    p '*' * 50 
+    p params
+    @user = User.new(user_params)
 
-    params[:userkill][:skill_ids] ||= []
-    skills = params[:userkill][:skill_ids]
+    params[:user][:skill_ids] ||= []
+    skills = params[:user][:skill_ids]
 
     respond_to do |format|
       if @user.save
@@ -46,22 +48,28 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
-	end
+  end
 
 
   # GET /users/1/edit
-	def edit
-	end
+  def edit
+    @user = User.find(session[:user_id])
+  end
 
   #PUT /users/1
-	def update
+  def update
 
-     puts @user = User.find(session[:user_id])
-     puts userskills = Userskill.find_by(skill_id: skill, user_id: @user.id)
+     @user = User.find(session[:user_id])
      @user.userskills
+     p params[:user][:skill_ids] ||= []
+     skills = params[:user][:skill_ids]
     
     respond_to do |format|
       if @user.update(user_params)
+          skills.each do |skill|
+            @userskills = Userskill.new(skill_id: skill, user_id: @user.id)
+            @userskills.save
+          end
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
@@ -69,7 +77,7 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
-	end
+  end
 
   # DELETE /users/1
   # DELETE /users/1.json
@@ -79,7 +87,7 @@ class UsersController < ApplicationController
     @user.destroy
   end
 
-	private
+  private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
