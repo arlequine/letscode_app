@@ -1,4 +1,4 @@
-<h1><%= "#{user_type}, registrate." %></h1>
+<h1><%= "#{@user_type}, registrate." %></h1>
 
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
@@ -37,7 +37,7 @@
       <%= f.text_field :birthday_year %>
     </div>
 
-    <% if user_type == "Empresario" %>
+    <% if @user_type == "Empresario" %>
 	    <div class="field">
 	      <%= f.label :organization %><br>
 	      <%= f.text_field :organization %>
@@ -51,7 +51,7 @@
 
     <div class="hide">
       <%= f.label :user_type %><br>
-      <%= f.text_field :user_type, :value => user_type, :disabled => false%>
+      <%= f.text_field :user_type, :value => @user_type, :disabled => false%>
     </div>
 
      <div class="field">

@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
 			session[:user_id] = @user.id
       	    project
 		else
-            render 'signin_form'
+            render 'sign_in_form'
 		end
 	end
 
