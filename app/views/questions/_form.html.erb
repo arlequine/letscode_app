@@ -1,3 +1,4 @@
+
 <%= simple_form_for [@proyecto, @question] do |f| %>
   <% if @question.errors.any? %>
     <div id="error_explanation">
@@ -9,6 +10,7 @@
       </ul>
     </div>
   <% end %>
+
 
   <div class="large-5 columns log-in-form">
    <%= f.input :title, placeholder: 'Post Title', label: false %>
