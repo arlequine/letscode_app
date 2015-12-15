@@ -16,19 +16,20 @@
       <ul id="title" class="nav navbar-nav">
       <li><%= link_to 'Let´s Code!', root_path %></li>
       </ul>
+      <!-- RESOURCE -->
       <% if current_user %>
-      <ul id="logout" class="nav navbar-nav">
-      <li><%= link_to 'Sign Out', logout_path %></li>
-      </ul>
+      <!-- RESOURCE! -->
       <div id="btn" class="btn-group pull-right right-nav">
         <button type="button" class="btn btn-mini dropdown-toggle" data-toggle="dropdown" id="button">
           <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><%= current_user.name %><span class="caret"></span></a>
         </button>
+        <!-- MODIFICATION -->
         <ul class="dropdown-menu">
-          <li>A</li>
+          <li><%= link_to 'Home', user_path(current_user) %></li>
           <li><%= link_to 'Profile', edit_user_path(current_user) %></li>
-          <li>C</li>
+          <li><%= link_to 'Sign Out', logout_path %></li>
         </ul>
+        <!-- MODIFICATION -->
       </div>
       <% else %>
       <ul id="signin" class="nav navbar-nav">

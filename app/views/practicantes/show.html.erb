@@ -30,7 +30,11 @@
 					  <% if postulation.user_id == user.id %>
 					      <% project = current_project(postulation.proyecto_id) %>
 					      <% @find = true %>
-						  <td><%= user.name %></td>
+
+					      <!-- MODIFICATION -->
+						  <td><%= link_to user.name, perfil_pract_path(user) %></td>
+						  <!-- MODIFICATION -->
+
 						  <td><%= user.last_name %></td>
 						  <% if postulation.status == "aceptado" %>
 						    <td><button type="button" class="btn btn-success btn-sm"><%= postulation.status %></button></td>

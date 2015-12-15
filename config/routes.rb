@@ -30,7 +30,11 @@ Rails.application.routes.draw do
   get '/proyecto/:id/practicantes/show', to: 'practicantes#show', as: 'show_participantes_proyecto'
 
 
+  get '/user/:id/perfil/practicante', to: 'practicantes#profile', as: 'perfil_pract'
+
+
   get '/proyecto/:id/practicantes/show', to: 'practicantes#back', as: 'back_participantes_proyecto'
+
 
   
   resources :users
