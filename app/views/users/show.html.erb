@@ -4,7 +4,7 @@
   <h1>Welcome <%= current_user.name %></h1>
 </div>
 <% if current_user.user_type == "empresa" %>
-  <p><%= link_to 'New Project', new_proyecto_path, class: "btn btn-success"  %></p>
+  <p><%= link_to 'New Project', new_project_path, class: "btn btn-success"  %></p>
 <% end %>
 <% if current_user.user_type == "empresa" %>
 <h3>YOUR PROJECTS</h3>
@@ -24,9 +24,9 @@
 				</tr>
 			</thead>
 			<tbody>
-                <% all_projects.each do |project| %>
-                    <% @find = false %>
-				    <% current_user.postulations.each do |postulation|  %>
+        <% all_projects.each do |project| %>
+          <% @find = false %>
+				  <% current_user.postulations.each do |postulation|  %>
 					  <tr>
 					  <% if postulation.proyecto_id == project.id %>
 					      <% project = current_project(postulation.proyecto_id) %>
@@ -41,7 +41,7 @@
 						    <td><button type="button" class="btn btn-warning btn-sm"><%= project.status_of_project(project) %></button></td>
 						  <% end %>
 					  <% end %>
-					  </tr> 
+					  </tr>  
 					<% end %>
 					<% if @find == false %>
 						<td><%= link_to project.title, description_project_path(project) %></td>

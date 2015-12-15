@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
     @users = User.all
@@ -16,10 +16,10 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-	# GET /users/new
-	def new1
+  # GET /users/new
+  def new1
     @user = User.new
-	end
+  end
 
   def new2
     @user = User.new
@@ -27,10 +27,10 @@ class UsersController < ApplicationController
  
   # POST /users
   # POST /users.json
-	def create
+  def create
     p '*' * 50 
     p params
-		@user = User.new(user_params)
+    @user = User.new(user_params)
 
     params[:user][:skill_ids] ||= []
     skills = params[:user][:skill_ids]
@@ -48,22 +48,23 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
-	end
+  end
 
 
   # GET /users/1/edit
+
 	def edit
     @user = User.find(session[:user_id])
 	end
 
   #PUT /users/1
-	def update
+  def update
 
      @user = User.find(session[:user_id])
      @user.userskills
-     p '*' *50
+
      p params[:user][:skill_ids] ||= []
-     p '*' *50
+
      skills = params[:user][:skill_ids]
     
     respond_to do |format|
@@ -79,7 +80,7 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
-	end
+  end
 
   # DELETE /users/1
   # DELETE /users/1.json
@@ -89,7 +90,7 @@ class UsersController < ApplicationController
     @user.destroy
   end
 
-	private
+  private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])

@@ -41,15 +41,11 @@ class ProyectosController < ApplicationController
 
   # GET /proyectos/1/edit
   def edit
-   @proyecto = Proyecto.find(session[:proyecto_id])
+   # @proyecto = Proyecto.find(session[:proyecto_id])
   end
 
   #PUT /proyectos/1
   def update
-    p '*' * 50
-    p @user = User.find(session[:user_id])
-
-    p '*' * 50
     #it gets values from skill 
     params[:proskill][:skill_ids] ||= []
     skills = params[:proskill][:skill_ids]

@@ -6,8 +6,13 @@ class PracticantesController < ApplicationController
 	  @postulations = Postulation.where(proyecto_id: @proyecto.id)
 	end
 
+
 	def profile
       @user = User.find(params[:id])
       render :'perfil/practicante'
+
+	def back
+		# render :'proyectos/:proyectos_id/practicantes_show'
+
 	end
 end
