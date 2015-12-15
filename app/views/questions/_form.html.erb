@@ -1,3 +1,4 @@
+
 <%= simple_form_for [@proyecto, @question] do |f| %>
   <% if @question.errors.any? %>
     <div id="error_explanation">
@@ -10,13 +11,17 @@
     </div>
   <% end %>
 
+
   <div class="large-5 columns log-in-form">
    <%= f.input :title, placeholder: 'Post Title', label: false %>
    <br>
    <%= f.input :question, placeholder: 'Post your Interest', label: false %>
    <br>
   <%= f.input :question_type, priority: [ "discussion" ], collection: [ "discussion", "resource", "deliverable"], label: "Post type" %>
+   <br>
+  <%= f.input :attachment, input_html: { hidden: true }, label: 'Upload Attachment' %>
    <div class="controls">
+  <br>
     <%= f.submit 'Post', class: 'button expanded'%>
    </div>
   </div>

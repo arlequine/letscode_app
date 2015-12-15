@@ -45,7 +45,11 @@ Rails.application.routes.draw do
     end
 
   root 'sessions#home'
-
+  
+  Letscode::Application.routes.draw do
+   resources :questions, only: [:index, :new, :create, :destroy]
+   #root "resumes#index"
+  end
   
 
   # The priority is based upon order of creation: first created -> highest priority.

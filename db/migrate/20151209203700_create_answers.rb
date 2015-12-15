@@ -1,7 +1,7 @@
 class CreateAnswers < ActiveRecord::Migration
   def change
     create_table :answers do |t|
-    	t.string :answer
+      t.string :answer
       t.integer :responder_id
       t.integer :question_id
 
