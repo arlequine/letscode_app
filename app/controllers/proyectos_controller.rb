@@ -46,10 +46,6 @@ class ProyectosController < ApplicationController
 
   #PUT /proyectos/1
   def update
-    p '*' * 50
-    p @user = User.find(session[:user_id])
-
-    p '*' * 50
     #it gets values from skill 
     params[:proskill][:skill_ids] ||= []
     skills = params[:proskill][:skill_ids]

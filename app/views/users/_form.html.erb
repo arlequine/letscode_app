@@ -38,10 +38,10 @@
     </div>
 
     <% if @user_type == "Empresario" %>
-	    <div class="field">
-	      <%= f.label :organization %><br>
-	      <%= f.text_field :organization %>
-	    </div>
+      <div class="field">
+        <%= f.label :organization %><br>
+        <%= f.text_field :organization %>
+      </div>
     <% end %>
 
     <div class="field">
@@ -60,19 +60,25 @@
     </div><br>
 
 
-      <div class="checkbox">
-       
-        <%= "Your Skills:" %>
-        
-        <% Skill.all.each do |skill| %>
-        <li><%= check_box_tag "user[skill_ids][]", skill.id, @user.skills.include?(skill) %><%= skill.name %></li>
-        <%end%>
-         <br>
-      </div>
+      <% if @user_type != "Empresario" %>
+        <div class="checkbox">
+         
+          <%= "Your Skills:" %>
+          
+          <% Skill.all.each do |skill| %>
+          <li><%= check_box_tag "user[skill_ids][]", skill.id, @user.skills.include?(skill) %><%= skill.name %></li>
+          <%end%>
+           <br>
+        </div>
+      <% end %>
+
       
       <div class="controls">
         <%= f.submit 'Create User', class: 'btn btn-primary'%>
       </div>
   <% end %>
-
 </div>
+
+
+<%= link_to 'Back', root_path %>
+
