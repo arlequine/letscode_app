@@ -31,7 +31,9 @@
 					  <% if postulation.proyecto_id == project.id %>
 					      <% project = current_project(postulation.proyecto_id) %>
 					      <% @find = true %>
-						  <td><%= project.title %></td>
+					      <!-- working -->
+						  <td><%= link_to project.title, description_project_path(project) %></td>
+						  <!-- worked -->
 						  <% if project.status_of_project(project) == "aceptado" %>
 						    <td><%= link_to project.status_of_project(project), show_collaboration_space_path(project), class: 'btn btn-success btn-sm' %></td>
 						  <% end %>
@@ -42,7 +44,7 @@
 					  </tr> 
 					<% end %>
 					<% if @find == false %>
-						<td><%= project.title %></td>
+						<td><%= link_to project.title, description_project_path(project) %></td>
 						<td><%= link_to ' join ', request_path(project),class: "btn btn-danger btn-sm" %></td>	
 					<% end %>
 				<% end %>		
@@ -74,7 +76,7 @@
 				  	<td><%= proyecto.result %></td>
 				  	<td><%= proyecto.num_students %></td>
 				  	<td><%= proyecto.dead_line %></td>
-				  	<td><%= link_to 'Show', proyecto, class: 'btn  btn-default btn-sm' %></td>
+				  	<td><%= link_to 'Show', show_participantes_proyecto_path(proyecto), class: 'btn  btn-default btn-sm' %></td>
 				  	<td><%= link_to 'Edit', edit_proyecto_path(proyecto), class: 'btn btn-success btn-sm' %></td>
 				  	<td><%= link_to 'Destroy', proyecto, method: :delete, class: 'btn btn-danger btn-sm', data: { confirm: 'Are you sure?' }, :remote => true %></td>
 				  </tr>

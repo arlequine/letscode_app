@@ -1,0 +1,56 @@
+<p id="notice"><%= notice %></p>
+
+<div class="page-header">
+  <h1>Welcome <%= current_user.name %></h1>
+</div>
+<h4><%= @proyecto.title %></h4>
+<p><%= link_to 'Project Description', new_proyecto_path, class: "btn btn-success"  %></p>
+
+
+<h3>Learners by Project</h3>
+
+
+<div class="media">
+  <div class="media-body">
+	
+		
+	    <table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Name of Learner</th>
+					<th>Last Name</th>
+					<th colspan="3"></th>
+				</tr>
+			</thead>
+			<tbody>
+        <% @users.each do |user| %>
+            
+				  <% @postulations.each do |postulation|  %>
+					  <tr>
+					  <% if postulation.user_id == user.id %>
+					      <% project = current_project(postulation.proyecto_id) %>
+					      <% @find = true %>
+						  <td><%= user.name %></td>
+						  <td><%= user.last_name %></td>
+						  <% if postulation.status == "aceptado" %>
+						    <td><button type="button" class="btn btn-success btn-sm"><%= postulation.status %></button></td>
+						  <% end %>
+						  <% if  postulation.status == "postulado" %>
+						    <td><button type="button" class="btn btn-warning btn-sm"><%= postulation.status %></button></td>
+						    <td><%= link_to 'Accept', update_request_path(postulation.proyecto_id, user), class: 'btn btn-danger btn-sm' %></td>
+						  <% end %>
+					  <% end %>
+					  </tr> 
+					<% end %>
+					
+				<% end %>		
+			</tbody>
+		</table>
+		
+	
+  </div>
+</div>
+
+
+
+
