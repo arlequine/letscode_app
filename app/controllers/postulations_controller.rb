@@ -14,21 +14,28 @@ class PostulationsController < ApplicationController
       end
 	end
 
+	def edit
+
+		
+	end
+
 	def update
 		@users = User.all
 	  user = User.find(params[:user_id])
-		@proyecto = Proyecto.find(params[:id])
+		@proyecto = Proyecto.find(params[:proyecto_id])
 		@postulations = Postulation.where(proyecto_id: @proyecto.id)
 		@postulation = Postulation.where(["user_id = ? and proyecto_id = ?", user.id, @proyecto.id])
 		@postulation.last.status = 'aceptado'
     respond_to do |format|
       if @postulation.last.save
-         format.html { render :'users/show', notice: 'Request was successfully updated.' }
-         format.json { render :show, status: :ok, location: @postulation }
+         format.html { redirect_to :back, notice: 'Request was successfully updated.' }
+         format.json { render :show, status: :ok, location: @postulation } 
       else
         format.html { render :edit }
         format.json { render json: @postulation.errors, status: :unprocessable_entity }
       end
     end
 	end
+
+
 end
