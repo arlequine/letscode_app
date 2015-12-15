@@ -55,6 +55,11 @@ class UsersController < ApplicationController
 
   #PUT /users/1
 	def update
+
+     puts @user = User.find(session[:user_id])
+     puts userskills = Userskill.find_by(skill_id: skill, user_id: @user.id)
+     @user.userskills
+    
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }

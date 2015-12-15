@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   has_many :postulations
   has_many :userskills
   has_many :proyectos
+  has_many :skills, through: :userskills
   has_secure_password
 
 
