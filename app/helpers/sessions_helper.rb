@@ -17,4 +17,6 @@ module SessionsHelper
 	def all_projects
         projects = Proyecto.all
     end
+
+    
 end
