@@ -20,11 +20,15 @@ Rails.application.routes.draw do
 
   get '/proyecto/:id/users/show', to: 'postulations#create', as: 'request'
 
+  # modification
+  get '/proyectos/:id', to: 'proyectos#show', as: 'description_project'
+
   
   resources :users
   resources :skills
   resources :proyectos
   resources :answers
+ 
   
   resources :proyectos do
     resources :questions
