@@ -1,5 +1,5 @@
 <div>
-  <%= simple_form_for(@proyecto, html: { class: 'form-horizontal' }) do |f| %>
+  <%= simple_form_for @proyecto do |f| %>
     <% if @proyecto.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@proyecto.errors.count, "error") %> prohibited this proyecto from being saved: </h2>
