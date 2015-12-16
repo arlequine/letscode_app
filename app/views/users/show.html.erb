@@ -38,7 +38,7 @@
 						    <td><%= link_to project.status_of_project(project), show_collaboration_space_path(project), class: 'btn btn-success btn-sm' %></td>
 						  <% end %>
 						  <% if project.status_of_project(project) == "postulado" %>
-						    <td><button type="button" class="btn btn-warning btn-sm"><%= project.status_of_project(project) %></button></td>
+						    <td><button type="button" class="btn btn-warning btn-sm" disabled="true"><%= project.status_of_project(project) %></button></td>
 						  <% end %>
 					  <% end %>
 					  </tr>  
@@ -76,7 +76,7 @@
 				  	<td><%= proyecto.result %></td>
 				  	<td><%= proyecto.num_students %></td>
 				  	<td><%= proyecto.dead_line %></td>
-				  	<td><%= link_to 'Show', show_participantes_proyecto_path(proyecto), class: 'btn  btn-default btn-sm' %></td>
+				  	<td><%= link_to 'Learners', show_participantes_proyecto_path(proyecto), class: 'btn  btn-default btn-sm' %></td>
 				  	<td><%= link_to 'Edit', edit_proyecto_path(proyecto), class: 'btn btn-success btn-sm' %></td>
 				  	<td><%= link_to 'Destroy', proyecto, method: :delete, class: 'btn btn-danger btn-sm', data: { confirm: 'Are you sure?' }, :remote => true %></td>
 				  </tr>

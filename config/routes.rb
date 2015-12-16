@@ -24,8 +24,8 @@ Rails.application.routes.draw do
  
   get '/proyectos/:id', to: 'proyectos#show', as: 'description_project'
 
-  get ':proyecto_id/:user_id', to: 'postulations#update', as: 'update_request'
-  # get '/proyecto/:id/users/:user_id/practicantes/show', to: 'postulations#update', as: 'update_request'
+  # get ':proyecto_id/:user_id', to: 'postulations#update', as: 'update_request'
+  get '/proyecto/:id/users/:user_id/practicantes/show', to: 'postulations#update', as: 'update_request'
 
   get '/proyecto/:id/practicantes/show', to: 'practicantes#show', as: 'show_participantes_proyecto'
 
@@ -35,6 +35,7 @@ Rails.application.routes.draw do
 
   get '/proyecto/:id/practicantes/show', to: 'practicantes#back', as: 'back_participantes_proyecto'
 
+  get '/question/:id/collaboration/collaboration', to: 'collaboration#download_file', as: 'download_file'
 
   
   resources :users

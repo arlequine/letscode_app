@@ -11,56 +11,81 @@
 
 <h3>Discussions</h3>
 <% @questions.each do |question| %>
-  <% if question.question_type == "discussion" %>
+  <% @users.each do |user| %>
+  <% if question.user_id == user.id && question.question_type == "discussion" %>
 		<div class="status row">
       <div class="span7">
-        <strong><%= current_user.name %> <%= current_user.last_name %></strong>
-        <p><%= question.title %></p>
+        <strong><%= "#{user.name} #{user.last_name} " %></strong><small>says:</small>
+        <p><strong><small><%= question.title %></small></strong></p>
+        <p><small><em><%= question.question %></em></small></p>
         <div class="meta">
-          <%= link_to time_ago_in_words(question.created_at) + " ago", show_answers_question_path(question) %>
-          <%= link_to "Download Resource", question.attachment_url %>
-          <span class="admin">
-	          <%= link_to 'Reply', show_answer_path(question) %>
+          <p><small><%= link_to time_ago_in_words(question.created_at) + " ago", show_answers_question_path(question) %>
+          <% if question.attachment_url %>
+            <%= link_to "Download", download_file_path(question), class: 'btn btn btn-info btn-xs' %>
+          <% end %>
+          </small>
+          <span>
+	          <%= link_to 'Reply', show_answer_path(question), class: 'btn btn btn-primary btn-xs' %>
           </span>
+          </p>
         </div>
+
+
       </div>
     </div>
+  <% end %>
   <% end %>
 <% end %>
 
 <h3>Resources</h3>
 <% @questions.each do |question| %>
-  <% if question.question_type == "resource" %>
-    <div class="status row">
-      <div class="span7">
-        <strong><%= current_user.name %> <%= current_user.last_name %></strong>
-        <p><%= question.title %></p>
-        <div class="meta">
-          <%= link_to time_ago_in_words(question.created_at) + " ago", show_answers_question_path(question) %>
-          <span class="admin">
-            <%= link_to 'Reply', show_answer_path(question) %>
-          </span>
+  <% @users.each do |user| %>
+    <% if question.user_id == user.id && question.question_type == "resource" %>
+      <div class="status row">
+        <div class="span7">
+            <strong><%= "#{user.name} #{user.last_name} " %></strong><small>says:</small>
+            <p><strong><small><%= question.title %></small></strong></p>
+            <p><small><em><%= question.question %></em></small></p>
+            <div class="meta">
+              <p><small><%= link_to time_ago_in_words(question.created_at) + " ago", show_answers_question_path(question) %>
+              <% if question.attachment_url %>
+                <%= link_to "Download", download_file_path(question), class: 'btn btn btn-info btn-xs' %>
+              <% end %>
+              </small>
+              <span>
+                <%= link_to 'Reply', show_answer_path(question), class: 'btn btn btn-primary btn-xs' %>
+              </span>
+            </div>
+          
         </div>
       </div>
-    </div>
+    <% end %>  
   <% end %>
 <% end %>
 
 <h3>Deliverables</h3>
 <% @questions.each do |question| %>
-  <% if question.question_type == "deliverable" %>
-    <div class="status row">
-      <div class="span7">
-        <strong><%= current_user.name %> <%= current_user.last_name %></strong>
-        <p><%= question.title %></p>
-        <div class="meta">
-          <%= link_to time_ago_in_words(question.created_at) + " ago", show_answers_question_path(question) %>
-          <span class="admin">
-            <%= link_to 'Reply', show_answer_path(question) %>
-          </span>
+  <% @users.each do |user| %>
+    <% if question.user_id == user.id && question.question_type == "deliverable" %>
+      <div class="status row">
+        <div class="span7">
+            <strong><%= "#{user.name} #{user.last_name} " %></strong><small>says:</small>
+            <p><strong><small><%= question.title %></small></strong></p>
+            <p><small><em><%= question.question %></em></small></p>
+            <div class="meta">
+              <p><small><%= link_to time_ago_in_words(question.created_at) + " ago", show_answers_question_path(question) %>
+              <% if question.attachment_url %>
+                <%= link_to "Download", download_file_path(question), class: 'btn btn btn-info btn-xs' %>
+              <% end %>
+              </small>
+              <span>
+                <%= link_to 'Reply', show_answer_path(question), class: 'btn btn btn-primary btn-xs' %>
+              </span>
+            </div>
+
         </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
 <% end %>
 

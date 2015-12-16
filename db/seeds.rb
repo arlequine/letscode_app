@@ -140,14 +140,14 @@
 @question9 = Question.create(title: "Project completed", question: "Here Project", proyecto_id: @proyecto5.id, user_id: @user6.id, question_type: "deliverable")
 
 #answers
-@answer1 = Answer.create(answer: "Please check CSS Tutorial - W3Schools", responder_id: @user2.id, question_id: @question1.id)
-@answer2 = Answer.create(answer: "Here... CSS - Wikipedia", responder_id: @user6.id, question_id: @question1.id)
+@answer1 = Answer.create(answer: "Please check CSS Tutorial - W3Schools", responder_id: @user2.id, user_id: @user2.id, question_id: @question1.id)
+@answer2 = Answer.create(answer: "Here... CSS - Wikipedia", responder_id: @user6.id, user_id: @user6.id, question_id: @question1.id)
 
-@answer3 = Answer.create(answer: "Please check Javascript Tutorial - W3Schools", responder_id: @user2.id, question_id: @question4.id)
-@answer4 = Answer.create(answer: "Here... Javascript - Wikipedia", responder_id: @user6.id, question_id: @question4.id)
+@answer3 = Answer.create(answer: "Please check Javascript Tutorial - W3Schools", responder_id: @user2.id, user_id: @user2.id, question_id: @question4.id)
+@answer4 = Answer.create(answer: "Here... Javascript - Wikipedia", responder_id: @user6.id, user_id: @user6.id, question_id: @question4.id)
 
-@answer5 = Answer.create(answer: "Please check Node Tutorial", responder_id: @user2.id, question_id: @question7.id)
-@answer6 = Answer.create(answer: "Here... Node - Wikipedia", responder_id: @user6.id, question_id: @question7.id)
+@answer5 = Answer.create(answer: "Please check Node Tutorial", responder_id: @user2.id, user_id: @user2.id, question_id: @question7.id)
+@answer6 = Answer.create(answer: "Here... Node - Wikipedia", responder_id: @user6.id, user_id: @user6.id, question_id: @question7.id)
 
 
 
