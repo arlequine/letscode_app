@@ -35,6 +35,7 @@ Rails.application.routes.draw do
 
   get '/proyecto/:id/practicantes/show', to: 'practicantes#back', as: 'back_participantes_proyecto'
 
+  get '/question/:id/collaboration/collaboration', to: 'collaboration#download_file', as: 'download_file'
 
   
   resources :users
