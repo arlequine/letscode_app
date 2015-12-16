@@ -15,7 +15,10 @@ Rails.application.routes.draw do
   get '/collaboration/collaboration', as: 'collaboration'
 
   get '/proyecto/:id/collaboration/collaboration', to: 'collaboration#collaboration', as: 'show_collaboration_space'
-  
+
+#Back´s zone open
+  get '/proyecto/:proyecto_id/collaboration/collaboration', to:'collaboration#collaboration', as: 'back_collaboration_space'
+#Back´s zone close
   get '/questions/:id/collaboration/collaboration', to: 'collaboration#answers_question', as: 'show_answers_question'
 
   get '/proyecto/:id/users/show', to: 'postulations#create', as: 'request'
@@ -24,8 +27,10 @@ Rails.application.routes.draw do
  
   get '/proyectos/:id', to: 'proyectos#show', as: 'description_project'
 
-  # get ':proyecto_id/:user_id', to: 'postulations#update', as: 'update_request'
-  get '/proyecto/:id/users/:user_id/practicantes/show', to: 'postulations#update', as: 'update_request'
+
+  #get ':proyecto_id/:user_id', to: 'postulations#update', as: 'update_request'
+   get '/proyecto/:id/users/:user_id/practicantes/show', to: 'postulations#update', as: 'update_request'
+
 
   get '/proyecto/:id/practicantes/show', to: 'practicantes#show', as: 'show_participantes_proyecto'
 

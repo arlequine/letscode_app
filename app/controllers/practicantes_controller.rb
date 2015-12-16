@@ -11,7 +11,7 @@ class PracticantesController < ApplicationController
       @user = User.find(params[:id])
       render :'perfil/practicante'
   end
-  
+
 	def back
 		# render :'proyectos/:proyectos_id/practicantes_show'
 
