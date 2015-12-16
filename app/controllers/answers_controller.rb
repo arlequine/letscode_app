@@ -22,7 +22,7 @@ class AnswersController < ApplicationController
 		@answer = Answer.new(answer_params)
 		@question.answers << @answer
 		@answer.update(responder_id: @user.id)
-
+    @answer.update(user_id: @user.id)
 
     respond_to do |format|
       if @answer.save

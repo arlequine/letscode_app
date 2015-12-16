@@ -22,7 +22,7 @@ class PostulationsController < ApplicationController
 	def update
 		@users = User.all
 	  user = User.find(params[:user_id])
-		@proyecto = Proyecto.find(params[:proyecto_id])
+		@proyecto = Proyecto.find(params[:id])
 		@postulations = Postulation.where(proyecto_id: @proyecto.id)
 		@postulation = Postulation.where(["user_id = ? and proyecto_id = ?", user.id, @proyecto.id])
 		@postulation.last.status = 'aceptado'
