@@ -55,6 +55,7 @@ class UsersController < ApplicationController
 
 	def edit
     @user = User.find(session[:user_id])
+    @user_type = @user.user_type
 	end
 
   #PUT /users/1

@@ -1,5 +1,3 @@
-<h1><%= "#{@user_type}, registrate." %></h1>
-
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -11,6 +9,13 @@
       </ul>
     </div>
   <% end %>
+
+<%if user_type == ("Practicante") %>
+  <h1><%= "#{user_type}, registrate." %></h1>
+  <%elsif user_type == ("Empresario") %>
+  <h1><%= "#{user_type}, registrate." %></h1>
+<%end%>
+
 <div class="signup">
     <div class="field">
       <%= f.label :name %><br>
@@ -37,7 +42,7 @@
       <%= f.text_field :birthday_year %>
     </div>
 
-    <% if @user_type == "Empresario" %>
+    <% if user_type == "Empresario" || user_type == "empresa" %>
       <div class="field">
         <%= f.label :organization %><br>
         <%= f.text_field :organization %>
@@ -51,7 +56,7 @@
 
     <div class="hide">
       <%= f.label :user_type %><br>
-      <%= f.text_field :user_type, :value => @user_type, :disabled => false%>
+      <%= f.text_field :user_type, :value => user_type, :disabled => false%>
     </div>
 
      <div class="field">
@@ -60,7 +65,7 @@
     </div><br>
 
 
-      <% if @user_type != "Empresario" %>
+      <% if user_type == "Practicante" || user_type == "practicante" %>
         <div class="checkbox">
          
           <%= "Your Skills:" %>
@@ -69,7 +74,8 @@
           <li><%= check_box_tag "user[skill_ids][]", skill.id, @user.skills.include?(skill) %><%= skill.name %></li>
           <%end%>
            <br>
-        </div>
+        </div> 
+
       <% end %>
 
       
@@ -80,5 +86,5 @@
 </div>
 
 
-<%= link_to 'Back', root_path %>
+
 

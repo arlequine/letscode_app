@@ -1,5 +1,4 @@
-<h1>Editing User</h1>
 
-<%= render 'form' %>
+<h1><%= "#{@user.name}," " " "edit your profile" %></h1>
 
-<%= link_to 'Back', @user %>
+<%= render 'form', user_type: @user_type %>
