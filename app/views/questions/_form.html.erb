@@ -12,20 +12,23 @@
   <% end %>
 
 
-
-      <%= f.input :title, placeholder: 'Post Title', label: false, class: 'form-control' %>
+  <div class="form_post">
+   <%= f.input :title, placeholder: 'Post Title', label: false, class: 'form-control' %>
    <br>
    <%= f.text_area :question, placeholder: 'Post your Interest', label: false, class: "form-control"%>
    <br>
-   <div class="choices">
-        <td  ><%= f.input  :question_type, priority: [ "discussion" ], collection: [ "discussion", "resource", "deliverable"], label: "Post type" %></td>
-  </div>
+
+
+   <%= f.input :question_type, priority: [ "discussion" ], collection: [ "discussion", "resource", "deliverable"], label: "Post type" %>
+
+
    <br>
-        <%= f.input :attachment, input_html: { hidden: true }, label: 'Upload Attachment' %>
-</div>
+   <%= f.input :attachment, input_html: { hidden: true }, label: 'Upload Attachment' %>
+
+
    <div class="controls">
-  <br>
-    <%= f.submit 'Post', class: 'button expanded'%>
- 
+    <br>
+    <%= f.submit 'Post', class: 'btn btn-primary btn-block'%>
   </div>
+</div>
 <% end %>
