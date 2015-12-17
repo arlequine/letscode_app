@@ -19,7 +19,7 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
+∫
 
 body,
 html,
@@ -67,17 +67,22 @@ $background: #3498db;
 
 
 .top{
-    margin-top: -87px;
+    margin-top: 130px;
 }
 
-#button{
+#button {
   background-color: #008CBA;
-  padding-bottom: 0px;
-  
 }
+
+#button a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 .htext a {
   color: #fff;
 }
+
 
 #btn{
     top: 15px;
@@ -210,6 +215,12 @@ footer .nav>li>a:hover {
     width: 455px !important;
     border-radius: 3px !important;
 }
+
+.table{
+  margin: 0 auto;
+  width: 60%;
+}
+
 .form_post{
     margin: 0 auto;
     width: 460px; 
@@ -503,3 +514,13 @@ p.copyright {
 
 
 
+.table > tbody > tr.info > th{
+  background-color: rgba(217, 237, 247, 0.58);
+}
+.table > tbody > tr.info > td{
+  background-color: rgba(217, 237, 247, 0.58);
+}
+
+.table > tbody > tr.active > th{
+  background-color: rgba(238, 238, 238, 0.81);
+}
