@@ -19,17 +19,71 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+∫
+
+body,
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+hr{
+  margin-left: -46px;
+}
+
+.list-inline h1{
+  height: 47px;
+}
+
+.intro-message h1{
+  letter-spacing: 3px;
+}
+.intro-message h3{
+  margin-left: 46px;
+}
+
+.intro-message{
+  position: relative;
+  padding-top: 26%;
+  padding-bottom: 20%;
+  padding-left: 43%;
+  color: #fff;
+}
+
+@import "compass/css3";
+
+/* $activeColor: #c0392b; //red */
+$activeColor: #27ae60; //green
+$darkenColor: darken($activeColor, 20%);
+/* $background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/13460/dark_wall.png'); */
+$background: #3498db;
+
+
+
 .top{
-  margin-top: 75px;
+    margin-top: -87px;
 }
 
 #button {
   background-color: #008CBA;
 }
+
 #button a {
   color: #ffffff;
   text-decoration: none;
 }
+
+.htext a {
+  color: #fff;
+}
+
+
 #btn{
     top: 15px;
     left: -8px;
@@ -61,63 +115,53 @@
 #logout a:hover{
   color: #9d9d9d;
 }
-#fondo{
-    background: url("http://ambartec.com/wp-content/uploads/2015/08/ambartec-estudios-de-impacto-ambiental-y-estudios-de-paisaje.jpg") repeat-x transparent 100% 18%;
-    background-size: 1745px 520px;
-    background-repeat: no-repeat;
-}
+
 
 #imgemp{
     width: 125px;
     height: 116px;
 }
 
-#texthome{
+#texthome a{
   text-align: center;
+  text-decoration: none
 }
 
-#block1{
-  text-align: center;
-  margin-top: 322px;
-  display: block;
-  float: left;
-  width: 365px;
+#texthome p{
+  color: #8a6d3b;
+  font-size: 16px;
 }
 
-#block2{
-  text-align: center;
-  margin-top: 319px;
-  display: table-column;
-  float: right;
-  width: 370px;
+
+#imgpr{
+    width: 230px;
+    height: 223px;
+
 }
 
-#imgpra{
-  width: 186px;
-  height: 116px;
+#imgmp{
+  width: 208px;
+  height: 189px;
+}
+#block3{
+  width: 400px;
+
+}
+.container {
+    width: 1672px;
+}
+.jumbotron{
+  position: relative;
+    background: #fff url("background.jpg") no-repeat center center;
+    background-size: 1740px 860px;
+    width: 1735px;
+    height: 100%;
+    overflow: hidden;
+    margin-left: -46px;
+
 }
 
-.ghost {
-
-    display: inline-block;
-    position: relative;
-
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    -ms-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-
-    font-size: 3em;
-    letter-spacing: 0.1em;
-    color: #ffffff;
-    text-decoration: none;
-
-    border: 0.15em solid #fff;
-
-    -webkit-transition: color 300ms, background 500ms, border-color 700ms;
-    transition: color 300ms, background 500ms, border-color 700ms;
-}
-
-footer {
+/*footer {
   background-color:#494949;
     color:#ddd;
     min-height:100px;
@@ -133,16 +177,17 @@ footer .nav>li>a {
 footer .nav>li>a:hover {
     background-color:transparent;
   color:#fff;
+}*/
+
+.footer{
+    display: block;
+    background: #fff;
+    height: 264px;
+    width: 152%;
+    margin-top: 743px;
+    margin-left: -296px;
+
 }
-
-
-form {
-  width: 40%;
-  margin-left: auto;
-  margin-right: auto;
-  display: inline-block;
-}
-
 
 .status {
   border-bottom: solid 1px #CCC;
@@ -170,10 +215,304 @@ form {
     width: 455px !important;
     border-radius: 3px !important;
 }
+
 .table{
   margin: 0 auto;
   width: 60%;
 }
+
+.form_post{
+    margin: 0 auto;
+    width: 460px; 
+    margin-left: 73%;
+}
+ 
+#question_question_type{
+  width: 160px;
+}
+#hpost{
+    margin: 0 auto;
+    width: 42%;
+}
+.down{
+    margin: 0 auto;
+    width: 42%;
+}
+
+.signup{
+    margin: 0 auto;
+    width: 460px; 
+}
+
+.hsign{
+    margin: 0 auto;
+    width: 42%;
+}
+
+.signup{
+  display:block;
+  top: 150px;
+}
+.hmp{
+  display: inline;
+}
+
+form {
+  width: 40%;
+  margin-right: auto;
+  display: inline-block;
+  margin-top: 23px;
+
+}
+.new_user{
+    width: 41%;
+    display: inline-block;
+    margin-top: 23px;
+    margin-left: 288px;
+}
+
+.signup{
+  margin-left: 0;
+}
+
+.content_profile{
+  margin: 0 auto;
+  width: 100%; 
+
+}
+
+.edit_user{
+  margin-left: 334px
+}
+
+.edit_user input{
+  width: 393px;
+}
+.reply{
+    margin: 0 auto;
+    width: 1085px;
+    margin-left: 297px;
+}
+.hreply{
+  margin-left: 299px;
+}
+
+/*css new*/
+
+.intro-message {
+    position: relative;
+    padding-top: 20%;
+    padding-bottom: 20%;
+}
+
+.intro-message > h1 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 5em;
+}
+
+.intro-divider {
+    width: 400px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.intro-message > h3 {
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+}
+
+@media(max-width:767px) {
+    .intro-message {
+        padding-bottom: 15%;
+    }
+
+    .intro-message > h1 {
+        font-size: 3em;
+    }
+
+    ul.intro-social-buttons > li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    ul.intro-social-buttons > li:last-child {
+        margin-bottom: 0;
+    }
+
+    .intro-divider {
+        width: 100%;
+    }
+}
+
+.network-name {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.content-section-a {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+}
+
+.content-section-b {
+    padding: 50px 0;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.section-heading {
+    margin-bottom: 30px;
+}
+
+.section-heading-spacer {
+    float: left;
+    width: 200px;
+    border-top: 3px solid #e7e7e7;
+}
+.content-banner{
+  margin: 0 auto;
+   width: 1694px;
+}
+
+.banner {
+    padding: 100px 0;
+    color: #f8f8f8;
+    background: url(http://www.animalconcepts.eu/resources/Interns.jpg) no-repeat center center;
+    background-size: 1748px;
+    margin-left: -64px;
+}
+
+.banner h2 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 3em;
+}
+
+.banner ul {
+    margin-bottom: 0;
+}
+
+.banner-social-buttons {
+    float: right;
+    margin-top: 0;
+}
+
+@media(max-width:1199px) {
+    ul.banner-social-buttons {
+        float: left;
+        margin-top: 15px;
+    }
+}
+
+@media(max-width:767px) {
+    .banner h2 {
+        margin: 0;
+        text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+        font-size: 3em;
+    }
+
+    ul.banner-social-buttons > li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    ul.banner-social-buttons > li:last-child {
+        margin-bottom: 0;
+    }
+}
+
+footer {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+}
+
+p.copyright {
+    margin: 15px 0 0;
+}
+
+
+
+
+/* .squaredTwo */
+.squaredTwo {
+  width: 12px;
+  height: 12px;
+  left: 19px;
+  position: relative;
+  margin: 20px auto;
+  background: #fcfff4;
+  background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+  box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+  label {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    background: linear-gradient(top, #222 0%, #45484d 100%);
+    box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,1);
+    &:after {
+      content: '';
+      width: 9px;
+      height: 5px;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      border: 3px solid #fcfff4;
+      border-top: none;
+      border-right: none;
+      background: transparent;
+      opacity: 0;
+      transform: rotate(-45deg);
+    }
+    &:hover::after {
+      opacity: 0.3;
+    }
+  }
+  input[type=checkbox] {
+    visibility: hidden;
+    &:checked + label:after {
+      opacity: 1;
+    }    
+  }
+}
+/* end .squaredTwo */
+
+.p-left{
+  margin-left: 4px;
+}
+
+.pagination .pagination {
+  .previous_page { background:#7777ff; color:white };
+  .previous_page.disabled { background: white; color: #777 };
+  .current { background: yellow };
+  .next_page { background: #7777ff; color: white };
+  .next_page.disabled { background: white; color: #777 };
+}
+
+/*CSS Post a comment*/
+
+.post-comment{
+  color: #f60;
+}
+
+.post-comment-user{
+  color: #81BEF7;
+  font-weight: normal;
+}
+
+/*Button for comment*/
+#large-button{
+  width: 559px;
+}
+
+
+
 
 .table > tbody > tr.info > th{
   background-color: rgba(217, 237, 247, 0.58);

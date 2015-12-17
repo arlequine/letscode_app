@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   post '/signin', to: 'sessions#signin', as: 'signin'
 
-  get '/questions/:id/answer/new', to: 'answers#new', as: 'show_answer'
+  get '/user/:user_id/proyecto/:proyecto_id/questions/:id/answer/new', to: 'answers#new', as: 'show_answer'
   
   get '/collaboration/collaboration', as: 'collaboration'
 
@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 #Back´s zone open
   get '/proyecto/:proyecto_id/collaboration/collaboration', to:'collaboration#collaboration', as: 'back_collaboration_space'
 #Back´s zone close
-  get '/questions/:id/collaboration/collaboration', to: 'collaboration#answers_question', as: 'show_answers_question'
+  get '/user/:user_id/proyecto/:proyecto_id/questions/:id/collaboration/collaboration', to: 'collaboration#answers_question', as: 'show_answers_question'
 
   get '/proyecto/:id/users/show', to: 'postulations#create', as: 'request'
 
