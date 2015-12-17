@@ -1,23 +1,42 @@
 <p id="notice"><%= notice %></p>
 
-<dl class="dl-horizontal">
-	<dt>Project Name:</dt>
-	<dd><%= @proyecto.title %></dd>
-	<dt>Project Description:</dt>
-	<dd><%= @proyecto.description %></dd>
-	<dt>Incentive:</dt>
-	<dd><%= @proyecto.incentive %></dd>
-	<dt>Result:</dt>
-	<dd><%= @proyecto.result %></dd>
-	<dt>Number of Students Accepted:</dt>
-	<dd><%= @proyecto.num_students %></dd>
-	<dt>Project Deadline:</dt>
-	<dd><%= @proyecto.dead_line %></dd>
-	<dt>Skills requeridos:</dt>
-	<% @proyecto.skills.each do |skill| %>
-	<dd><%= skill.name %></dd>
+<table class="table">
+ <tbody>
+	<tr class="info">
+		<th>Project Name:</th>
+		<td><%= @proyecto.title %></td>
+	</tr>
+	<tr class="active">
+		<th>Project Description:</th>
+		<td><%= @proyecto.description %></td>
+	</tr>
+	<tr class="info">
+		<th>Incentive:</th>
+		<td><%= @proyecto.incentive %></td>
+	</tr>
+	<tr class="active">
+		<th>Result:</th>
+		<td><%= @proyecto.result %></td>
+	</tr>
+	<tr class="info">
+		<th>Number of Students Accepted:</th>
+		<td><%= @proyecto.num_students %></td>
+	</tr>
+	<tr class="active">
+		<th>Project Deadline:</th>
+		<td><%= @proyecto.dead_line %></td>
+	</tr>
+	<tr class="info">
+		<th>Skills requeridos:</th>
+		<td class="info"><% @proyecto.skills.each do |skill| %></td>
+	</tr>
+	<tr class="active">
+		<td><%= skill.name %></td>
+		<th></th>
 	<% end %>
-</dl>
+	</tr>
+ </tbody>
+</table>
 
 
 <%= link_to 'Back',  user_path %>
