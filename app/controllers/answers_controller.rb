@@ -8,8 +8,11 @@ class AnswersController < ApplicationController
   end
 	# GET /questions/new
 	def new
+    @user = User.find(params[:user_id])
 		@question = Question.find(params[:id])
     @answer = Answer.new
+    @answers = Answer.where(question_id: @question.id)
+    @proyecto = Proyecto.find(params[:proyecto_id])
 	end
   # POST /users
   # POST /users.json
