@@ -35,8 +35,11 @@ gem 'simple_form'
 
 gem 'bootstrap-sass', '~> 3.3.6'
 
+gem "compass-rails", github: "Compass/compass-rails", branch: "master"
 
+gem 'will_paginate', '~> 3.0.6'
 
+gem 'will_paginate-bootstrap', '~> 1.0.0'
 
 
 # Use ActiveModel has_secure_password
