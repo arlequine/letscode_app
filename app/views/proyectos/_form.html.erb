@@ -12,9 +12,9 @@
     <% end %>
     
     <fieldset class="form-group">
-      <label for="Title">Project Title</label>
+      
       <%= f.input :title, placeholder: 'Project Title', label: false %>
-      <small class="text-muted"></small>
+      <small class="text-muted">Please name for your project</small>
     </fieldset>
 
     <fieldset class="form-group">
@@ -47,17 +47,18 @@
        <small class="text-muted">When this project has to be completed</small>
     </fieldset>
     
-    
-
-
-      <div class="checkbox">
-       
+        <label>
         <%= "Skills for project:" %>
-        
-        <% Skill.all.each do |skill| %>
-        <li><%= check_box_tag "proskill[skill_ids][]", skill.id, @proyecto.skills.include?(skill) %><%= skill.name %></li>
-        <%end%>
-         <br>
+        </label>
+
+        <div class="checkbox">
+          <% Skill.all.each do |skill| %>
+            <li class="p-left"><%= check_box_tag "proskill[skill_ids][]", skill.id, @proyecto.skills.include?(skill), class: 'squaredTwo' %><%= skill.name %></li>
+          <%end%>
+        </div>
+        <small class="text-muted">Select skills for your project</small>
+        <br>
+        <br>
       </div>
 
     
