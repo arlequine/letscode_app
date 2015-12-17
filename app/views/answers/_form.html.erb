@@ -1,34 +1,36 @@
+<div class="reply">
+  <h1><%= @question.title %></h1>
+  <h2>Comments</h2>
+  <br><br>
+  <p class="lead"><%= @question.question %></p>
 
-<h2><%= @question.title %></h2>
-
-<br><br><br>
-<p class="lead"><%= @question.question %></p>
-
-<% if @errors %>
-  <p><%= @errors %></p>
-<% end %>
-
-<%= simple_form_for [@question, @answer] do |f| %>
-  <% if @answer.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@answer.errors.count, "error") %> prohibited this answer from being saved: </h2>
-      <ul>
-        <% @answer.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
+  <% if @errors %>
+    <p><%= @errors %></p>
   <% end %>
 
+  <%= simple_form_for [@question, @answer] do |f| %>
+    <% if @answer.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@answer.errors.count, "error") %> prohibited this answer from being saved: </h2>
+        <ul>
+          <% @answer.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
+    <p><%= @question.created_at %></p>
+    <div class="">
+      <div>
+        <%= f.text_area :answer, placeholder: 'Write a helpful answer', label: false, :rows => 8, :cols => 75, class: "form-control"%>
+      </div> 
 
-    <div >
-      <%= f.text_area :answer, placeholder: 'Write a helpful answer', label: false, :rows => 8, :cols => 75%>
-    </div> 
+       <br>
+       <div class="controls">
+        <%= f.submit 'Comment', class: 'button expanded'%>
+       </div>
+    </div>
 
-     <br>
-     <div class="controls">
-      <%= f.submit 'Comment', class: 'button expanded'%>
-     </div>
-
-<% end %>
+  <% end %>
+</div>
