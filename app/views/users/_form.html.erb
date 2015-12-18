@@ -1,4 +1,5 @@
-<%= form_for(@user) do |f| %>
+<div>
+<%= simple_form_for @user do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved: </h2>
@@ -16,65 +17,67 @@
     <h1><%= "#{user_type}, registrate." %></h1>
   <%end%>
 </div>
-<div class="content_profile">
-    <div class="signup">
-        <div>
-          
-          <%= f.text_field :name, placeholder: 'name', class: 'form-control' %><br>
-        </div>
 
-        <div class="field">
-          <%= f.text_field :last_name, placeholder: 'last_name', class: 'form-control' %><br>
-        </div>
 
-        <div class="field">
+        <fieldset class="form-group">
+          <%= f.input :name, placeholder: 'name', label: false%><br>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <%= f.input :last_name, placeholder: 'last_name', label: false %><br>
+        </fieldset>
+
+        <fieldset class="form-group">
        
-          <%= f.text_field :genre, placeholder: 'genre', class: 'form-control' %><br>
-        </div>
+          <%= f.input :genre, placeholder: 'genre', label: false %><br>
+        </fieldset>
 
-        <div class="field">
+        <fieldset class="form-group">
        
-            <%= f.text_field :email, placeholder: 'email', class: 'form-control' %><br>
-        </div>
+            <%= f.input :email, placeholder: 'email', label: false %><br>
+        </fieldset>
 
-        <div class="field">
+        <fieldset class="form-group">
        
-          <%= f.text_field :birthday_year, placeholder: 'birthday_year', class: 'form-control' %><br>
-        </div>
+          <%= f.input :birthday_year, placeholder: 'birthday_year', label: false %>
+       
+        </fieldset>
 
         <% if user_type == "Empresario" || user_type == "empresa" %>
-          <div class="field">
+          <fieldset class="form-group">
 
-            <%= f.text_field :organization, placeholder: 'organization', class: 'form-control' %>      <br>
-          </div>
+            <%= f.input :organization, placeholder: 'organization', label: false %>    
+          </fieldset>
         <% end %> 
 
-        <div class="field">
+        <fieldset class="form-group">
 
-          <%= f.text_field :opinion, placeholder: 'opinion', class: 'form-control' %>
-        </div>      <br>
+          <%= f.input :opinion, placeholder: 'opinion'%>
+        </fieldset>      
 
-        <div class="hide">
-          <%= f.label :user_type %><br>
-          <%= f.text_field :user_type, :value => user_type, :disabled => false%>
-        </div>
+        <fieldset class="hide">
+          <%= f.input :user_type, :value => user_type, :disabled => false%>
+        </fieldset>
 
-         <div class="field">
+         <fieldset class="form-group">
 
-          <%= f.password_field :password, placeholder: 'password', class: 'form-control' %>
-        </div><br>
+          <%= f.input :password, placeholder: 'password'%>
+        </fieldset>
 
 
           <% if user_type == "Practicante" || user_type == "practicante" %>
-            <div class="checkbox" >
+            
              
+              <label>
               <%= "Your Skills:" %>
-              
+              </label>
+
+              <div class="checkbox" >
               <% Skill.all.each do |skill| %>
-              <li><%= check_box_tag "user[skill_ids][]", skill.id, @user.skills.include?(skill) %><%= skill.name %></li>
+              <li class="p-left"><%= check_box_tag "user[skill_ids][]", skill.id, @user.skills.include?(skill), class: 'squaredTwo' %><%= skill.name %></li>
               <%end%>
                <br>
-            </div> 
+              </div> 
 
           <% end %>
 
@@ -83,8 +86,6 @@
             <%= f.submit 'Create User', class: 'btn btn-primary'%>
           </div>
       <% end %>
-     </div>
+
 </div>
-
-
 
