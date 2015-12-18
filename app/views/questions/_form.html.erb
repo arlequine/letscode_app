@@ -22,9 +22,9 @@
    <%= f.input :question_type, priority: [ "discussion" ], collection: [ "discussion", "resource", "deliverable"], label: "Post type" %>
 
 
-   <br>
-   <%= f.input :attachment, input_html: { hidden: true }, label: 'Upload Attachment' %>
-
+   <div class="carrier-wave-field">
+     <%= f.input :attachment, input_html: { hidden: true }, label: 'Upload Attachment' %>
+   <div>
 
    <div class="controls">
     <br>
