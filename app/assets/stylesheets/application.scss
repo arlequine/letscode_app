@@ -79,10 +79,6 @@ $background: #3498db;
   text-decoration: none;
 }
 
-.htext a {
-  color: #fff;
-}
-
 
 #btn{
     top: 15px;
@@ -144,7 +140,8 @@ $background: #3498db;
   height: 189px;
 }
 #block3{
-  width: 400px;
+  width: 260px;
+  height: 238px;
 
 }
 .container {
@@ -276,11 +273,13 @@ form {
 
 .edit_user{
 
+
   width: 27%;
   display: inline-block;
   margin-top: 23px;
   margin-left: 542px;
 }
+
 
 
 .reply{
@@ -519,6 +518,7 @@ p.copyright {
   width: 559px;
 }
 
+
 hr { 
   background-color: black;
   width: 441px;
@@ -526,6 +526,7 @@ hr {
   margin-left: 543px;
   margin-bottom: 24px;
 }
+
 
 .table > tbody > tr.info > th{
   background-color: rgba(217, 237, 247, 0.58);
