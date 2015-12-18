@@ -19,7 +19,7 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-∫
+
 
 body,
 html,
@@ -77,10 +77,6 @@ $background: #3498db;
 #button a {
   color: #ffffff;
   text-decoration: none;
-}
-
-.htext a {
-  color: #fff;
 }
 
 
@@ -153,32 +149,27 @@ $background: #3498db;
 }
 .jumbotron{
   position: relative;
-    background: #fff url("background.jpg") no-repeat center center;
-    background-size: 1740px 860px;
-    width: 1735px;
-    height: 100%;
-    overflow: hidden;
-    margin-left: -46px;
-
+  background: #fff url("background.jpg") no-repeat center center;
+  background-size: 1740px 860px;
+  width: 1735px;
+  height: 100%;
+  overflow: hidden;
+  margin-left: -46px;
+  top: -144px;
 }
-
-/*footer {
-  background-color:#494949;
-    color:#ddd;
-    min-height:100px;
-    padding-top:20px;
-    padding-bottom:40px;
+.page-header{
+  margin-left: 332px;
 }
-
-footer .nav>li>a {
-    padding:3px;
-    color:#ccc;
+.h3{
+  margin-left: 335px;
 }
-
-footer .nav>li>a:hover {
-    background-color:transparent;
-  color:#fff;
-}*/
+.newproject{
+  margin: 0 auto;
+  width: 970px;
+}
+#signup{
+margin: 0 auto;
+}
 
 .footer{
     display: block;
@@ -242,18 +233,17 @@ footer .nav>li>a:hover {
 
 .signup{
     margin: 0 auto;
-    width: 460px; 
 }
 
+#hsign{
+  margin: 0 auto;
+  width: 32%;
+}
 .hsign{
-    margin: 0 auto;
-    width: 42%;
+  margin: 0 auto;
+  width: 32%;
 }
 
-.signup{
-  display:block;
-  top: 150px;
-}
 .hmp{
   display: inline;
 }
@@ -263,13 +253,12 @@ form {
   margin-right: auto;
   display: inline-block;
   margin-top: 23px;
-
 }
 .new_user{
-    width: 41%;
-    display: inline-block;
-    margin-top: 23px;
-    margin-left: 288px;
+  width: 27%;
+  display: inline-block;
+  margin-top: 23px;
+  margin-left: 542px;
 }
 
 .signup{
@@ -283,8 +272,14 @@ form {
 }
 
 .edit_user{
-  margin-left: 334px
+
+
+  width: 27%;
+  display: inline-block;
+  margin-top: 23px;
+  margin-left: 542px;
 }
+
 
 
 .reply{
@@ -295,6 +290,17 @@ form {
 .hreply{
   margin-left: 299px;
 }
+
+#colabzone{
+  margin: 0 auto;
+  width: 970px;
+}
+#answzone{
+  margin: 0 auto;
+  width: 1000px;
+  margin-left: -15px;
+}
+
 
 /*css new*/
 
@@ -314,7 +320,9 @@ form {
     width: 400px;
     border-top: 1px solid #f8f8f8;
     border-bottom: 1px solid rgba(0,0,0,0.2);
+    margin-left: -33px;
 }
+
 
 .intro-message > h3 {
     text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
@@ -510,6 +518,16 @@ p.copyright {
   width: 559px;
 }
 
+
+hr { 
+  background-color: black;
+  width: 441px;
+  margin: 0 auto;
+  margin-left: 543px;
+  margin-bottom: 24px;
+}
+
+
 .table > tbody > tr.info > th{
   background-color: rgba(217, 237, 247, 0.58);
 }
@@ -519,4 +537,24 @@ p.copyright {
 
 .table > tbody > tr.active > th{
   background-color: rgba(238, 238, 238, 0.81);
+}
+
+#back{
+  margin-left: -10px;
+}
+.learnback{
+  margin-left: 336px;
+}
+
+.btnpro{
+  margin-left: 335px;
+}
+
+#inpost{
+  margin-left: 324px;
+  width: 784px;
+}
+
+.areansw{
+  margin-left: -2px;
 }

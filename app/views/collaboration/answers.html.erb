@@ -1,26 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<div class="status row">
-	<h2><%= @user.name %> <small><%= @user.last_name %></small></h2>
-</div>
-
-<div class="page-header">
-  <h1><small><%= @question.title %></small></h1>
-  <h5><small><%= @question.question %></small></h5>
-  <h6><small>Posted by <%= @user.name %> at <%= @question.created_at.to_formatted_s(:long) %> </small></h6>
-</div>
-
-<div class="status row">
-  <h4><%= @answers.count%> Comment:</h4>
-</div>
-<% @answers.each do |answer| %>
-  <div class="status row">
-      <div class="span7">
-      	<strong><small><%= answer.responder.name %> said...</small></strong>
-		    <p><small> <%= answer.answer %></small></p>
-		    <h6><small> <%= answer.created_at.to_formatted_s(:long)%></small></h6>
-      </div>
+  <div id="inpost" class="status row">
+  	<h2><%= @user.name %> <small><%= @user.last_name %></small></h2>
   </div>
-<% end %>
 
-<p><small><u><%= link_to "Post a comment", show_answer_path(@user, @proyecto, @question) %></u></small> | <%= link_to "Back", show_collaboration_space_path(@proyecto) %></p>
+  <div id ="inpost"class="page-header">
+    <h1><small><%= @question.title %></small></h1>
+    <h5><small><%= @question.question %></small></h5>
+    <h6><small>Posted by <%= @user.name %> at <%= @question.created_at.to_formatted_s(:long) %> </small></h6>
+  </div>
+
+  <div id="inpost" class="status row">
+    <h4><%= @answers.count%> Comment:</h4>
+  </div>
+  <% @answers.each do |answer| %>
+    <div id="inpost" class="status row">
+        <div class="span7">
+        	<strong id="span7"><small><%= answer.responder.name %> said...</small></strong>
+  		    <p><small> <%= answer.answer %></small></p>
+  		    <h6><small> <%= answer.created_at.to_formatted_s(:long)%></small></h6>
+        </div>
+    </div>
+  <% end %>
+
+  <p id="inpost"><small><u><%= link_to "Post a comment", show_answer_path(@user, @proyecto, @question) %></u></small> | <%= link_to "Back", show_collaboration_space_path(@proyecto) %></p>
