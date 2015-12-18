@@ -512,8 +512,6 @@ p.copyright {
 }
 
 
-
-
 .table > tbody > tr.info > th{
   background-color: rgba(217, 237, 247, 0.58);
 }
@@ -524,3 +522,34 @@ p.copyright {
 .table > tbody > tr.active > th{
   background-color: rgba(238, 238, 238, 0.81);
 }
+
+
+
+/*Choose file*/
+/*Copied from bootstrap 
+.carrier-wave-field input {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}*/
+/*Also 
+.carrier-wave-field input {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    z-index: 20px;
+}*/
