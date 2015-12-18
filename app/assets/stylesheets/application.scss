@@ -33,6 +33,11 @@ h6 {
     font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
+
+body {
+  padding-top: 100px;
+}
+
 hr{
   margin-left: -46px;
 }
@@ -139,24 +144,24 @@ $background: #3498db;
     width: 150px;
     height: 147px;
 }
-#block1{
+/*#block1{
     display: table-column;
     float: left;
     width: 498px;
     text-align: center;
     margin-left: 112px;
-}
-.blocks{
+}*/
+/*#blocks{
   margin-top: 532px;
-}
+}*/
 
-#block2{
+/*#block2{
   display: table-column;
   float: right;
   margin-right: 210px;
   width: 496px;
   text-align: center;
-}
+}*/
 
 #block3{
   width: 260px;
@@ -167,7 +172,7 @@ $background: #3498db;
     width: 100%;
 }
 .fondo{
-  background: url("bg.jpg") no-repeat fixed center;
+  background: url("paisaje.png") no-repeat fixed center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -265,7 +270,7 @@ margin: 0 auto;
 #hsign{
   margin: 0 auto;
   width: 32%;
-}
+}i
 .hsign{
   margin: 0 auto;
   width: 32%;
@@ -275,12 +280,13 @@ margin: 0 auto;
   display: inline;
 }
 
-form {
+/*form {
   width: 40%;
   margin-right: auto;
   display: inline-block;
   margin-top: 23px;
-}
+}*/
+
 .new_user{
   width: 27%;
   display: inline-block;
@@ -584,4 +590,9 @@ hr {
 
 .areansw{
   margin-left: -2px;
+}
+
+
+.home-space {
+  padding-top: 400px;
 }
