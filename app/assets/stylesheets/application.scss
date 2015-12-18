@@ -33,6 +33,11 @@ h6 {
     font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
+
+body {
+  padding-top: 100px;
+}
+
 hr{
   margin-left: -46px;
 }
@@ -124,30 +129,57 @@ $background: #3498db;
 }
 
 #texthome p{
-  color: #8a6d3b;
+  color: #fff;
   font-size: 16px;
+  font-weight: normal;
 }
 
 
-#imgpr{
+#imgpra{
     width: 230px;
-    height: 223px;
-
+    height: 149px;
 }
 
-#imgmp{
-  width: 208px;
-  height: 189px;
+#imgemp{
+    width: 150px;
+    height: 147px;
 }
+/*#block1{
+    display: table-column;
+    float: left;
+    width: 498px;
+    text-align: center;
+    margin-left: 112px;
+}*/
+/*#blocks{
+  margin-top: 532px;
+}*/
+
+/*#block2{
+  display: table-column;
+  float: right;
+  margin-right: 210px;
+  width: 496px;
+  text-align: center;
+}*/
+
 #block3{
   width: 260px;
   height: 238px;
 
 }
 .container {
-    width: 1672px;
+    width: 100%;
 }
-.jumbotron{
+.fondo{
+  background: url("paisaje.png") no-repeat fixed center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/*.jumbotron{
   position: relative;
   background: #fff url("background.jpg") no-repeat center center;
   background-size: 1740px 860px;
@@ -156,7 +188,7 @@ $background: #3498db;
   overflow: hidden;
   margin-left: -46px;
   top: -144px;
-}
+}*/
 .page-header{
   margin-left: 332px;
 }
@@ -238,7 +270,7 @@ margin: 0 auto;
 #hsign{
   margin: 0 auto;
   width: 32%;
-}
+}i
 .hsign{
   margin: 0 auto;
   width: 32%;
@@ -248,12 +280,13 @@ margin: 0 auto;
   display: inline;
 }
 
-form {
+/*form {
   width: 40%;
   margin-right: auto;
   display: inline-block;
   margin-top: 23px;
-}
+}*/
+
 .new_user{
   width: 27%;
   display: inline-block;
@@ -557,4 +590,9 @@ hr {
 
 .areansw{
   margin-left: -2px;
+}
+
+
+.home-space {
+  padding-top: 400px;
 }

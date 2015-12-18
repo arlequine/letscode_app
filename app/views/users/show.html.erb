@@ -20,6 +20,7 @@
 				<tr>
 					<th>Project Title</th>
 					<th>Project Status</th>
+					<th>Collaboration Space</th>
 					<th colspan="3"></th>
 				</tr>
 			</thead>
@@ -35,17 +36,20 @@
 						  <td><%= link_to project.title, description_project_path(project) %></td>
 						  <!-- worked -->
 						  <% if project.status_of_project(project) == "aceptado" %>
-						    <td><%= link_to project.status_of_project(project), show_collaboration_space_path(project), class: 'btn btn-success btn-sm' %></td>
+						    <td><span class="label label-success">Accepted</span></td>
+						    <td><%= link_to 'Collaborate', show_collaboration_space_path(project), class: 'btn btn-success btn-sm' %></td>
 						  <% end %>
 						  <% if project.status_of_project(project) == "postulado" %>
-						    <td><button type="button" class="btn btn-warning btn-sm" disabled="true"><%= project.status_of_project(project) %></button></td>
+						    <td><span class="label label-warning">Processing</span></td>
+						    <td><button type="button" class="btn btn-warning btn-sm" disabled="true"><%= "Applied" %></button></td>
 						  <% end %>
 					  <% end %>
 					  </tr>  
 					<% end %>
 					<% if @find == false %>
 						<td><%= link_to project.title, description_project_path(project) %></td>
-						<td><%= link_to ' join ', request_path(project),class: "btn btn-danger btn-sm" %></td>	
+						<td><span class="label label-danger">Available</span></td>
+						<td><%= link_to ' Join ', request_path(project),class: "btn btn-danger btn-sm" %></td>	
 					<% end %>
 				<% end %>		
 			</tbody>
