@@ -1,20 +1,29 @@
-<div class="page-header">
-  <h2><small class="post-comment">Post a comment On:</small><small class="post-comment-user"> <%= @user.name %></small></h2>
-  <h5><small class="post-comment"><%= "'#{@question.title}'" %></small></h5>
-  <h5><small><%= @answers.count%> Comment - </small><small><u><%= link_to "Show Original Post", show_answers_question_path(@user, @proyecto, @question) %></u></small></h5>
-<div>
+
+<% if @errors %>
+  <p><%= @errors %></p>
+<% end %>
+ <div id="answzone">
+  <div class="page-header">
+    <h2><small class="post-comment">Post a comment On:</small><small class="post-comment-user"> <%= @user.name %></small></h2>
+    <h5><small class="post-comment"><%= "'#{@question.title}'" %></small></h5>
+    <h5><small><%= @answers.count%> Comment - </small><small><u><%= link_to "Show Original Post", show_answers_question_path(@user, @proyecto, @question) %></u></small></h5>
+  <div>
+
+  <br>
+
+  <% @answers.each do |answer| %>
+    <div class="status row">
+        <div class="span7">
+          <strong><small><%= answer.responder.name %> said...</small></strong>
+          <p><small> <%= answer.answer %></small></p>
+          <h6><small> <%= answer.created_at.to_formatted_s(:long)%></small></h6>
+        </div>
+  <%end %>
+
+
 
 <br>
-<% @answers.each do |answer| %>
-  <div class="status row">
-      <div class="span7">
-        <strong><small><%= answer.responder.name %> said...</small></strong>
-        <p><small> <%= answer.answer %></small></p>
-        <h6><small> <%= answer.created_at.to_formatted_s(:long)%></small></h6>
-      </div>
-  </div>
-<% end %>
-<br>
+
 <h5>Leave your comment</h5>
 <br>
 <%= simple_form_for [@question, @answer] do |f| %>
@@ -26,17 +35,17 @@
           <li><%= message %></li>
         <% end %>
       </ul>
+
     </div>
   <% end %>
+  <%= f.text_area :answer, placeholder: 'Write a helpful answer', label: false, :rows => 8, :cols => 75%>
+    
 
-  
-    <%= f.text_area :answer, placeholder: 'Write a helpful answer', label: false, :rows => 8, :cols => 75%>
-  
-
-  <br>
-  <div class="controls">
-    <p id="large-button"><%= f.submit 'Comment', class: 'btn btn-primary btn-block' %></p>
-  </div>
+    <br>
+    <div class="controls">
+      <p id="large-button"><%= f.submit 'Comment', class: 'btn btn-primary btn-block' %></p>
+    </div>
 
 <% end %>
+</div>
 

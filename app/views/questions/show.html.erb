@@ -1,9 +1,17 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-	<strong>Title:</strong>
-	<%= @question.title %>
-	<strong>Question:</strong>
-	<%= @question.question %>
-</p>
+	<div class="page-header">
+	<h1>Post created</h1>
+	</div>
+<table class="table">
+	<tbody>
+		<tr class="info">
+			<th>Title:</th>
+			<th><%= @question.title %></th>
+		</tr>
+		<tr class="active">
+			<th>Question:</th>
+			<th><%= @question.question %></th>
+		</tr>
+	</tbody>
+</table>
 
