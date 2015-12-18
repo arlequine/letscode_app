@@ -1,160 +1,20 @@
 
-<body>
+<body class="fondo">
 
-    <!-- Header -->
-    <a name="about"></a>
-    <div class="jumbotron">
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="intro-message">
-                        <h1>Lets Code</h1>
-                        <h3>Your Digital Internship</h3>
-                        <hr class="intro-divider">
-                        <ul class="list-inline intro-social-buttons">
-                            <li>
-                                <h1 class="htext"><i class="fa fa-twitter fa-fw"></i> <%= link_to 'COMPANY', "/users/new?user_type=Empresario", class: 'btn btn-default btn-lg' %></h1>
-                            </li>
-                            <li>
-                                <h1><i class="fa fa-github fa-fw"></i><%= link_to 'LEARNER', "/users/new?user_type=Practicante", class: 'btn btn-default btn-lg' %></h1>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <!-- /.container -->
-
-    </div>
-    <!-- /.intro-header -->
-
-    <!-- Page Content -->
-
-  <a  name="services"></a>
-    <div class="content-section-a">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 col-sm-6">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">Company: Find talents</h2>
-                    <p class="lead">Post your needs and projects.</p>
-                </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img src="http://info.astronauts.es/css/img/icono_companies.png" alt="">
-                </div>
-            </div>
-
-        </div>
-        <!-- /.container -->
-
-    </div>
-    <!-- /.content-section-a -->
-
-    <div class="content-section-b">
-
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">Learner: find real projects</h2>
-                    <p class="lead">Participate in real project!</p>
-                </div>
-                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                    <img id="imgpr"class="img-responsive" src="http://www.serva.cl/wp-content/uploads/2015/03/icono_RH.png" alt="">
-                </div>
-            </div>
-
-        </div>
-        <!-- /.container -->
-
-    </div>
-    <!-- /.content-section-b -->
-
-    <div class="content-section-a">
-
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-5 col-sm-6">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">Let´s Code</h2>
-                    <p class="lead">A community of digital internships where you can find talent and get hoocked on business projects.</p>
-                </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <%= image_tag "code_logoa.jpg", id: 'block3', class: 'img-responsive'%>
-                </div>
-            </div>
-
-        </div>
-        <!-- /.container -->
-
-    </div>
-    <!-- /.content-section-a -->
-  <div class="content-banner">
-    <a  name="contact"></a>
-      <div class="banner">
-
-          <div class="container">
-
-              <div class="row">
-                  <div class="col-lg-6">
-                      <h2>Connect to Let's code</h2>
-                  </div>
-                  <div class="col-lg-6">
-                      <ul class="list-inline banner-social-buttons">
-                          <li>
-                              <a class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                          </li>
-                          <li>
-                              <a class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                          </li>
-                          <li>
-                              <a class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
-                          </li>
-                      </ul>
-                  </div>
-              </div>
-
-          </div>
-          <!-- /.container -->
-
-      </div>
-      <!-- /.banner -->
+<div class="blocks">
+  <div id="block1"class="grid-3">
+     <img id="imgemp"src="https://reqlut2.s3.amazonaws.com/images/home/icono03Duoc.png">
+     <div id="texthome"><h1 id="home"><%= link_to 'LEARNER', "/users/new?user_type=Practicante", class: 'btn btn-default btn-lg' %></h1>
+       <p>Empresario Postea tus mayores ideas para hacer crecer tu empresa.<p>
+     </div>
   </div>
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="list-inline">
-                        <li>
-                            <a href="#">Home</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="#about">About</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="#services">Services</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="#contact">Contact</a>
-                        </li>
-                    </ul>
-                    <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>
-                </div>
-            </div>
-        </div>
-    </footer>
 
+  <div id="block2">
+     <img id="imgpra"src="http://www.cibertec.edu.pe/wp-content/uploads/2014/03/icono-home-gestion.png">
+     <div id="texthome"><h1 id="home"></i></i> <%= link_to 'COMPANY', "/users/new?user_type=Empresario", class: 'btn btn-default btn-lg' %></h1>
+      Practicante mejora tus habilidades y adquiere experiencia postulandote a las mejores proyectos que las empresas tienen para ti.
+     </div>
+  </div>
+</div>
 
 </body>

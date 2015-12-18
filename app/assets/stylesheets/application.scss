@@ -129,16 +129,23 @@ $background: #3498db;
 }
 
 
-#imgpr{
+#imgpra{
     width: 230px;
     height: 223px;
-
 }
 
 #imgmp{
   width: 208px;
   height: 189px;
 }
+.blocks{
+
+}
+
+#block2{
+
+}
+
 #block3{
   width: 260px;
   height: 238px;
@@ -147,7 +154,15 @@ $background: #3498db;
 .container {
     width: 1672px;
 }
-.jumbotron{
+.fondo{
+  background: url("bg.jpg") no-repeat fixed center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/*.jumbotron{
   position: relative;
   background: #fff url("background.jpg") no-repeat center center;
   background-size: 1740px 860px;
@@ -156,7 +171,7 @@ $background: #3498db;
   overflow: hidden;
   margin-left: -46px;
   top: -144px;
-}
+}*/
 .page-header{
   margin-left: 332px;
 }
