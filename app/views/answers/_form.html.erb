@@ -10,6 +10,7 @@
   <div>
 
   <br>
+
   <% @answers.each do |answer| %>
     <div class="status row">
         <div class="span7">
@@ -17,25 +18,27 @@
           <p><small> <%= answer.answer %></small></p>
           <h6><small> <%= answer.created_at.to_formatted_s(:long)%></small></h6>
         </div>
+  <%end %>
+
+
+
+<br>
+
+<h5>Leave your comment</h5>
+<br>
+<%= simple_form_for [@question, @answer] do |f| %>
+  <% if @answer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@answer.errors.count, "error") %> prohibited this answer from being saved: </h2>
+      <ul>
+        <% @answer.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+
     </div>
   <% end %>
-  <br>
-  <h5>Leave your comment</h5>
-  <br>
-  <%= simple_form_for [@question, @answer] do |f| %>
-    <% if @answer.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@answer.errors.count, "error") %> prohibited this answer from being saved: </h2>
-        <ul>
-          <% @answer.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-
-    
-      <%= f.text_area :answer, placeholder: 'Write a helpful answer', label: false, :rows => 8, :cols => 75%>
+  <%= f.text_area :answer, placeholder: 'Write a helpful answer', label: false, :rows => 8, :cols => 75%>
     
 
     <br>
@@ -43,5 +46,6 @@
       <p id="large-button"><%= f.submit 'Comment', class: 'btn btn-primary btn-block' %></p>
     </div>
 
-  <% end %>
+<% end %>
 </div>
+
