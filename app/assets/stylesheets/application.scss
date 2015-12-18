@@ -144,24 +144,7 @@ $background: #3498db;
     width: 150px;
     height: 147px;
 }
-/*#block1{
-    display: table-column;
-    float: left;
-    width: 498px;
-    text-align: center;
-    margin-left: 112px;
-}*/
-/*#blocks{
-  margin-top: 532px;
-}*/
 
-/*#block2{
-  display: table-column;
-  float: right;
-  margin-right: 210px;
-  width: 496px;
-  text-align: center;
-}*/
 
 #block3{
   width: 260px;
@@ -179,26 +162,21 @@ $background: #3498db;
   background-size: cover;
 }
 
-/*.jumbotron{
-  position: relative;
-  background: #fff url("background.jpg") no-repeat center center;
-  background-size: 1740px 860px;
-  width: 1735px;
-  height: 100%;
-  overflow: hidden;
-  margin-left: -46px;
-  top: -144px;
-}*/
+.content{
+  margin: 0 auto;
+  width: 1273px;
+}
+.conten h3{
+  margin-left: 338px;
+}
+.newp{
+    margin-left: 247px;
+}
+
 .page-header{
   margin-left: 332px;
 }
-.h3{
-  margin-left: 335px;
-}
-.newproject{
-  margin: 0 auto;
-  width: 970px;
-}
+
 #signup{
 margin: 0 auto;
 }
