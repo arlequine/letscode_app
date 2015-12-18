@@ -124,26 +124,38 @@ $background: #3498db;
 }
 
 #texthome p{
-  color: #8a6d3b;
+  color: #fff;
   font-size: 16px;
+  font-weight: normal;
 }
 
 
 #imgpra{
     width: 230px;
-    height: 223px;
+    height: 149px;
 }
 
-#imgmp{
-  width: 208px;
-  height: 189px;
+#imgemp{
+    width: 150px;
+    height: 147px;
+}
+#block1{
+    display: table-column;
+    float: left;
+    width: 498px;
+    text-align: center;
+    margin-left: 112px;
 }
 .blocks{
-
+  margin-top: 532px;
 }
 
 #block2{
-
+  display: table-column;
+  float: right;
+  margin-right: 210px;
+  width: 496px;
+  text-align: center;
 }
 
 #block3{
