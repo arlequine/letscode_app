@@ -70,27 +70,23 @@
 						<th colspan="3"></th>
 					</tr>
 				</thead>
-
 				<tbody>
-
-					<% current_user.proyectos.each do |proyecto| %>
-					  <tr id="<%= "delete_proyecto_#{proyecto.id}" %>">
-					  	<td><%= link_to proyecto.title, show_collaboration_space_path(proyecto) %></td>
-					  	<td><%= proyecto.description %></td>
-					  	<td><%= proyecto.incentive %></td>
-					  	<td><%= proyecto.result %></td>
-					  	<td><%= proyecto.num_students %></td>
-					  	<td><%= proyecto.dead_line %></td>
-					  	<td><%= link_to 'Learners', show_participantes_proyecto_path(proyecto), class: 'btn  btn-default btn-sm' %></td>
-					  	<td><%= link_to 'Edit', edit_proyecto_path(proyecto), class: 'btn btn-success btn-sm' %></td>
-					  	<td><%= link_to 'Destroy', proyecto, method: :delete, class: 'btn btn-danger btn-sm', data: { confirm: 'Are you sure?' }, :remote => true %></td>
-					  </tr>
-					<% end %>
-				</tbody>
-			</table>
-		<% end %>
-	  </div>
-	</div>
+				<% current_user.proyectos.each do |proyecto| %>
+				  <tr id="<%= "delete_proyecto_#{proyecto.id}" %>">
+				  	<td><%= link_to proyecto.title, show_collaboration_space_path(proyecto) %></td>
+				  	<td><%= proyecto.description %></td>
+				  	<td><%= proyecto.incentive %></td>
+				  	<td><%= proyecto.result %></td>
+				  	<td><%= proyecto.num_students %></td>
+				  	<td><%= proyecto.dead_line %></td>
+				  	<td><%= link_to 'Learners by Project', show_participantes_proyecto_path(proyecto), class: 'btn  btn-primary btn-sm' %></td>
+				  	<td><%= link_to 'Edit', edit_proyecto_path(proyecto), class: 'btn btn-success btn-sm' %></td>
+				  	<td><%= link_to 'Destroy', proyecto, method: :delete, class: 'btn btn-danger btn-sm', data: { confirm: 'Are you sure?' }, :remote => true %></td>
+				  </tr>
+				<% end %>
+			</tbody>
+		</table>
+	<% end %>
   </div>
 </div>
 
