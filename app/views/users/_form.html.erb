@@ -6,10 +6,10 @@
   <% @user_value = "prac" %>
 <% end %>
 
-<%if user_type == ("Practicante") %>
-    <h1 id="hsign"><%= "#{user_type}, registrate." %></h1>
-    <%elsif user_type == ("Empresario") %>
-    <h1 id="hsign"><%= "#{user_type}, registrate." %></h1>
+<%if user_type == "practicante" %>
+    <h1 id="hsign"><%= "#{user_type.capitalize}, registrate." %></h1>
+    <%elsif user_type == "empresa" %>
+    <h1 id="hsign"><%= "#{user_type.capitalize}, registrate." %></h1>
   <%end%>
   <br>
 <hr>
@@ -47,7 +47,7 @@
 
         <div class="field">
        
-          <%= f.text_field :birthday_year, placeholder: 'birthday_year', class: 'form-control' %><br>
+          <%= f.text_field :birthday_year, placeholder: 'birthyear', class: 'form-control' %><br>
         </div>
 
         <% if @user_value == "emp" %>
