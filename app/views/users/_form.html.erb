@@ -1,5 +1,4 @@
-<!-- centrado de titulo -->
-<div class="row col-md-4 col-md-offset-4">
+
 <% if user_type == "Empresario" || user_type == "empresa" %>
   <% user_type = "empresa" %>
   <% @user_value = "emp" %>
@@ -13,7 +12,7 @@
     <h1 id="hsign"><%= "#{user_type.capitalize}, registrate." %></h1>
 <% else %>
     <h1 id="hsign"><%= "#{user_type.capitalize}, registrate." %></h1>
-  <%end%>
+<%end%>
   <br>
 <hr>
 <%= form_for(@user) do |f| %>
@@ -27,10 +26,9 @@
       </ul>
     </div>
   <% end %>
-</div>
-<!-- termina el centrado del titulo -->
+
 <div class="content_profile">
-    <div class="signup">
+    <div>
         <div>
           
           <%= f.text_field :name, placeholder: 'name', class: 'form-control' %><br>
