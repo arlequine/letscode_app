@@ -8,10 +8,10 @@
 	</div>
 	<br>
 	<% if current_user.user_type == "empresa" %>
-	<h3 class="newp">YOUR PROJECTS</h3>
+	<h3 id="your">YOUR PROJECTS</h3>
 
 	<% else %>
-	<h3 class="newp">ALL PROJECTS:</h3>
+	<h3 id="all">ALL PROJECTS:</h3>
 	<% end %>
 	<br>
 	<div class="media">
@@ -91,9 +91,11 @@
 		</table>
 	<% end %>
 	<br><br><br><br>
-	<% if current_user.user_type == "empresa" %>
-	  <p class="newp"><%= link_to 'New Project', new_project_path, class: "btn btn-success"  %></p>
-	<% end %>
+	<div  class="col-xs-12 col-xs-offset-0 col-sm-12 col-sm-offset-0 col-md-12 col-md-offset-0 col-lg-3 col-lg-offset-2">
+		<% if current_user.user_type == "empresa" %>
+		  <p><%= link_to 'New Project', new_project_path, class: "btn btn-success"  %></p>
+		<% end %>
+	</div>
   </div>
 </div>
 
