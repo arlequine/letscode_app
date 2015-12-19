@@ -1,3 +1,11 @@
+<% if user_type == "Empresario" || user_type == "empresa" %>
+  <% user_type = "empresa" %>
+  <% @user_value = "emp" %>
+<% else %>
+  <% user_type = "practicante" %>
+  <% @user_value = "prac" %>
+<% end %>
+
 <%if user_type == ("Practicante") %>
     <h1 id="hsign"><%= "#{user_type}, registrate." %></h1>
     <%elsif user_type == ("Empresario") %>
@@ -42,7 +50,8 @@
           <%= f.text_field :birthday_year, placeholder: 'birthday_year', class: 'form-control' %><br>
         </div>
 
-        <% if user_type == "Empresario" || user_type == "empresa" %>
+        <% if @user_value == "emp" %>
+          
           <div class="field">
 
             <%= f.text_field :organization, placeholder: 'organization', class: 'form-control' %>      <br>
@@ -65,7 +74,8 @@
         </div><br>
 
 
-          <% if user_type == "Practicante" || user_type == "practicante" %>
+          <% if @user_value == "prac" %>
+         
             <div class="checkbox" >
              
               <%= "Your Skills:" %>

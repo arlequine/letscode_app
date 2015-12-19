@@ -1,4 +1,6 @@
 <p id="notice"><%= notice %></p>
+
+
 <div  class="col-xs-12 col-xs-offset-0 col-sm-12 col-sm-offset-0 col-md-12 col-md-offset-0 col-lg-3 col-lg-offset-2">
   <div class="content">
 	<div class="page-header">
@@ -9,6 +11,7 @@
 	<% end %>
 	<% if current_user.user_type == "empresa" %>
 	<h3 class="newp">YOUR PROJECTS</h3>
+
 	<% else %>
 	<h3 class="newp">ALL PROJECTS:</h3>
 	<% end %>
@@ -27,32 +30,33 @@
 				</thead>
 				<tbody>
 	        <% all_projects.each do |project| %>
-	          <% @find = false %>
-					  <% current_user.postulations.each do |postulation|  %>
-						  <tr>
-						  <% if postulation.proyecto_id == project.id %>
-						      <% project = current_project(postulation.proyecto_id) %>
-						      <% @find = true %>
-						      <!-- working -->
-							  <td><%= link_to project.title, description_project_path(project) %></td>
-							  <!-- worked -->
-							  <% if project.status_of_project(project) == "aceptado" %>
-							    <td><span class="label label-success">Accepted</span></td>
-							    <td><%= link_to 'Collaborate', show_collaboration_space_path(project), class: 'btn btn-success btn-sm' %></td>
-							  <% end %>
-							  <% if project.status_of_project(project) == "postulado" %>
-							    <td><span class="label label-warning">Processing</span></td>
-							    <td><button type="button" class="btn btn-warning btn-sm" disabled="true"><%= "Applied" %></button></td>
-							  <% end %>
+          <% @find = false %>
+                <tr>
+				  <% current_user.postulations.each do |postulation|  %>
+					  
+					  <% if postulation.proyecto_id == project.id %>
+					    <% project = current_project(postulation.proyecto_id) %>
+					      <% @find = true %>
+					      <!-- working -->
+						  <td><%= link_to project.title, description_project_path(project) %></td>
+						  <!-- worked -->
+						  <% if project.status_of_project(project) == "aceptado" %>
+						    <td><span class="label label-success">Accepted</span></td>
+						    <td><%= link_to 'Collaborate', show_collaboration_space_path(project), class: 'btn btn-success btn-sm' %></td>
+						  <% elsif project.status_of_project(project) == "postulado" %>
+						    <td><span class="label label-warning">Processing</span></td>
+						    <td><button type="button" class="btn btn-warning btn-sm" disabled="true"><%= "Applied" %></button></td>
 						  <% end %>
-						  </tr>  
-						<% end %>
-						<% if @find == false %>
-							<td><%= link_to project.title, description_project_path(project) %></td>
-							<td><span class="label label-danger">Available</span></td>
-							<td><%= link_to ' Join ', request_path(project),class: "btn btn-danger btn-sm" %></td>	
-						<% end %>
-					<% end %>		
+					        
+					    <% end %>
+					<% end %><!-- postulations -->	
+					<% if @find == false %>
+						<td><%= link_to project.title, description_project_path(project) %></td>
+						<td><span class="label label-danger">Available</span></td>
+						<td><%= link_to ' Join ', request_path(project),class: "btn btn-danger btn-sm" %></td>	
+					<% end %>
+				</tr>
+				<% end %><!-- projects -->		
 				</tbody>
 			</table>
 			
