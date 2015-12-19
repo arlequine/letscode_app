@@ -22,7 +22,7 @@
 @user4 = User.create(name: "Marco", last_name: "Niro", email: "marco@gmail.com", genre: "masculino", birthday_year: "1980", user_type: "empresa", organization: "Mercado Libre", opinion: "learn to code", password: "niro")
 @user5 = User.create(name: "Alfonso", last_name: "Renius", email: "alfonso@gmail.com", genre: "masculino", birthday_year: "1970", user_type: "empresa", organization: "next-x", opinion: "learn to code", password: "alfonso")
 @user6 = User.create(name: "Herdez", last_name: "Bello", email: "herdez@gmail.com", genre: "masculino", birthday_year: "1971", user_type: "practicante", organization: "", opinion: "learn to code", password: "herdez")
-
+@user7 = User.create(name: "Rafa", last_name: "Garcia", email: "rafa@gmail.com", genre: "masculino", birthday_year: "1971", user_type: "practicante", organization: "", opinion: "learn to code", password: "rafa")
 
 #userskills
 @userskill1 = Userskill.new(user_id: @user1.id)
@@ -45,6 +45,11 @@
 @skill3.userskills << @userskill3
 @userskill3 = Userskill.new(user_id: @user6.id)
 @skill4.userskills << @userskill3
+
+@userskill4 = Userskill.new(user_id: @user7.id)
+@skill1.userskills << @userskill4
+@userskill4 = Userskill.new(user_id: @user7.id)
+@skill2.userskills << @userskill4
 
 #proyectos
 @proyecto1 = Proyecto.create(title: "Rails App", description: "App for rails", incentive: "Recomendation Letter", result: "Completed", num_students: 5, dead_line: "2015-12-20", empresa_id: @user3.id, user_id: @user3.id)
@@ -126,6 +131,8 @@
 @postulation12 = Postulation.create(user_id: @user1.id, proyecto_id: @proyecto5.id, status: "aceptado")
 
 
+
+
 #questions
 @question1 = Question.create(title: "About CSS", question: "How to use CSS?", proyecto_id: @proyecto1.id, user_id: @user1.id, question_type: "discussion")
 @question2 = Question.create(title: "Z-index", question: "Here how to use Z-index", proyecto_id: @proyecto1.id, user_id: @user2.id, question_type: "resource")
@@ -171,7 +178,7 @@ Or you could generate your widths as fluid percentages and control the display u
 
 #resouces_to_question2
 @answer31 = Answer.create(answer: "know node.js uses an event-driven, non-blocking I/O model,these will make my site more cool,and I  use express and socket.io create a demo just like the lesson (Using Node.js and Websockets to Build a Chat Service", responder_id: @user3.id, user_id: @user3.id, question_id: @question2.id)
-@answer32 = Answer.create(answer: "There are many tricky questions on linked list. One site offering questions and answers on linked list is www.codersmaze.com which is a good tutorial website consisting of questions on all data structure topics. It also consists of quizzes challenging your fundamentals. Hope this helps.", responder_id: @user4.id, user_id: @user4.id, question_id: @question2.id)
+@answer32 = Answer.create(answer: "There are many tricky questions on linked list. One site offering questions and answers on linked list is <a href= www.codersmaze.com </a> which is a good tutorial website consisting of questions on all data structure topics. It also consists of quizzes challenging your fundamentals. Hope this helps.", responder_id: @user4.id, user_id: @user4.id, question_id: @question2.id)
 @answer33 = Answer.create(answer: "www.quora.com/the-question/answer/Baptiste-Fontaine and www.quora.com/the-question?/answer/Baptiste-Fontaine are not same URLs.  The last one won't work as you expect.
 (In my examples, replace the-question with a real question)
 [1]: http://tools.ietf.org/html/rfc39...", responder_id: @user5.id, user_id: @user5.id, question_id: @question2.id)

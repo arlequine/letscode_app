@@ -1,6 +1,10 @@
 <div class="row col-md-6 col-md-offset-3">
 	<p id="notice"><%= notice %></p>
 
+	<div class="page-header">
+	  <h1><%=@user.name%> <%=@user.last_name%></h1>
+	</div>
+
 	<table class="table">
 		<tbody>
 			<tr class="info">
@@ -37,4 +41,7 @@
 			</tr>
 		</tbody> 
 	</table>
+
+	<%= link_to 'Back',  :back %>
+
 </div>
