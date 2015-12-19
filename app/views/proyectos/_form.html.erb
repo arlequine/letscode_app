@@ -1,71 +1,72 @@
-<div>
-  <%= simple_form_for @proyecto do |f| %>
-    <% if @proyecto.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@proyecto.errors.count, "error") %> prohibited this proyecto from being saved: </h2>
-        <ul>
-          <% @proyecto.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
+
+    <!-- <div class="content"> -->
+      <div>
+        <%= simple_form_for @proyecto do |f| %>
+          <% if @proyecto.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@proyecto.errors.count, "error") %> prohibited this proyecto from being saved: </h2>
+              <ul>
+                <% @proyecto.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
           <% end %>
-        </ul>
+          
+          <fieldset class="form-group">
+            
+            <%= f.input :title, placeholder: 'Project Title', label: false %>
+            <small class="text-muted">Please name for your project</small>
+          </fieldset>
+
+          <fieldset class="form-group">
+            <label for="description">Description</label>
+            <%= f.input :description, placeholder: 'Description', label: false %>
+             <small class="text-muted">Please a brief description of your project</small>
+          </fieldset>
+
+          <fieldset class="form-group">
+            <label for="incentive">Incentive</label>
+             <%= f.input :incentive, placeholder: 'Incentive', label: false %>
+             <small class="text-muted">Please a brief description of your incentives for learners of this project</small>
+          </fieldset>
+          
+          <fieldset class="form-group">
+            <label for="expected result">Expected Result</label>
+             <%= f.input :result, placeholder: 'Expected Result', label: false %>
+             <small class="text-muted">Please a brief description of your expected result for this project</small>
+          </fieldset>
+            
+          <fieldset class="form-group">
+            <label for="limit">Limit of Students</label>
+            <%= f.input :num_students, placeholder: 'Students', label: false %>
+             <small class="text-muted">How many learners can participate for this project</small>
+          </fieldset>
+
+          <fieldset class="form-group">
+            <label for="deadline">Project deadline</label>
+             <%= f.input :dead_line, placeholder: 'Deadline', label: false %>
+             <small class="text-muted">When this project has to be completed</small>
+          </fieldset>
+          
+              <label>
+              <%= "Skills for project:" %>
+              </label>
+
+              <div class="checkbox">
+                <% Skill.all.each do |skill| %>
+                  <li class="p-left"><%= check_box_tag "proskill[skill_ids][]", skill.id, @proyecto.skills.include?(skill), class: 'squaredTwo' %><%= skill.name %></li>
+                <%end%>
+              </div>
+              <small class="text-muted">Select skills for your project</small>
+              <br>
+              <br>
+            </div>
+
+          
+          <div>
+            <%= f.submit 'Create Project', class: 'btn btn-primary'%>
+          </div>
+        <% end %>
       </div>
-    <% end %>
-    
-    <fieldset class="form-group">
-      
-      <%= f.input :title, placeholder: 'Project Title', label: false %>
-      <small class="text-muted">Please name for your project</small>
-    </fieldset>
-
-    <fieldset class="form-group">
-      <label for="description">Description</label>
-      <%= f.input :description, placeholder: 'Description', label: false %>
-       <small class="text-muted">Please a brief description of your project</small>
-    </fieldset>
-
-    <fieldset class="form-group">
-      <label for="incentive">Incentive</label>
-       <%= f.input :incentive, placeholder: 'Incentive', label: false %>
-       <small class="text-muted">Please a brief description of your incentives for learners of this project</small>
-    </fieldset>
-    
-    <fieldset class="form-group">
-      <label for="expected result">Expected Result</label>
-       <%= f.input :result, placeholder: 'Expected Result', label: false %>
-       <small class="text-muted">Please a brief description of your expected result for this project</small>
-    </fieldset>
-      
-    <fieldset class="form-group">
-      <label for="limit">Limit of Students</label>
-      <%= f.input :num_students, placeholder: 'Students', label: false %>
-       <small class="text-muted">How many learners can participate for this project</small>
-    </fieldset>
-
-    <fieldset class="form-group">
-      <label for="deadline">Project deadline</label>
-       <%= f.input :dead_line, placeholder: 'Deadline', label: false %>
-       <small class="text-muted">When this project has to be completed</small>
-    </fieldset>
-    
-        <label>
-        <%= "Skills for project:" %>
-        </label>
-
-        <div class="checkbox">
-          <% Skill.all.each do |skill| %>
-            <li class="p-left"><%= check_box_tag "proskill[skill_ids][]", skill.id, @proyecto.skills.include?(skill), class: 'squaredTwo' %><%= skill.name %></li>
-          <%end%>
-        </div>
-        <small class="text-muted">Select skills for your project</small>
-        <br>
-        <br>
-      </div>
-
-    
-    <div class="controls">
-      <%= f.submit 'Create Project', class: 'btn btn-primary'%>
-    </div>
-   
-  <% end %>
-
-</div>
+    </div>  

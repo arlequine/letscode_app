@@ -145,12 +145,6 @@ $background: #3498db;
     height: 147px;
 }
 
-
-#block3{
-  width: 260px;
-  height: 238px;
-
-}
 .container {
     width: 100%;
 }
@@ -166,7 +160,7 @@ $background: #3498db;
   margin: 0 auto;
   width: 1273px;
 }
-.conten h3{
+.content h3{
   margin-left: 338px;
 }
 .newp{
@@ -176,6 +170,8 @@ $background: #3498db;
 .page-header{
   margin-left: 246px;
 }
+.headerpro{}
+
 
 #signup{
 margin: 0 auto;
@@ -313,6 +309,7 @@ margin: 0 auto;
 }
 
 
+
 /*css new*/
 
 .intro-message {
@@ -339,29 +336,7 @@ margin: 0 auto;
     text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
 }
 
-@media(max-width:767px) {
-    .intro-message {
-        padding-bottom: 15%;
-    }
 
-    .intro-message > h1 {
-        font-size: 3em;
-    }
-
-    ul.intro-social-buttons > li {
-        display: block;
-        margin-bottom: 20px;
-        padding: 0;
-    }
-
-    ul.intro-social-buttons > li:last-child {
-        margin-bottom: 0;
-    }
-
-    .intro-divider {
-        width: 100%;
-    }
-}
 
 .network-name {
     text-transform: uppercase;
@@ -418,30 +393,7 @@ margin: 0 auto;
     margin-top: 0;
 }
 
-@media(max-width:1199px) {
-    ul.banner-social-buttons {
-        float: left;
-        margin-top: 15px;
-    }
-}
 
-@media(max-width:767px) {
-    .banner h2 {
-        margin: 0;
-        text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-        font-size: 3em;
-    }
-
-    ul.banner-social-buttons > li {
-        display: block;
-        margin-bottom: 20px;
-        padding: 0;
-    }
-
-    ul.banner-social-buttons > li:last-child {
-        margin-bottom: 0;
-    }
-}
 
 footer {
     padding: 50px 0;
@@ -557,18 +509,7 @@ hr {
   margin-left: 336px;
 }
 
-.btnpro{
-  margin-left: 335px;
-}
 
-#inpost{
-  margin-left: 324px;
-  width: 784px;
-}
-
-.areansw{
-  margin-left: -2px;
-}
 
 
 .home-space {
