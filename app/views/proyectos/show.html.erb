@@ -1,46 +1,50 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-12">
+		<p id="notice"><%= notice %></p>
 
-<div class="page-header">
-  <h1><%=@proyecto.title%></h1>
+	<div class="page-header">
+	  <h1><%=@proyecto.title%></h1>
+	</div>
+	<br><br>
+	<table class="table">
+	 <tbody>
+		<tr class="info">
+			<th>Project Name:</th>
+			<td><%= @proyecto.title %></td>
+		</tr>
+		<tr class="active">
+			<th>Project Description:</th>
+			<td><%= @proyecto.description %></td>
+		</tr>
+		<tr class="info">
+			<th>Incentive:</th>
+			<td><%= @proyecto.incentive %></td>
+		</tr>
+		<tr class="active">
+			<th>Result:</th>
+			<td><%= @proyecto.result %></td>
+		</tr>
+		<tr class="info">
+			<th>Number of Students Accepted:</th>
+			<td><%= @proyecto.num_students %></td>
+		</tr>
+		<tr class="active">
+			<th>Project Deadline:</th>
+			<td><%= @proyecto.dead_line %></td>
+		</tr>
+		<tr class="info">
+			<th>Skills requeridos:</th>
+			<td class="info"><% @proyecto.skills.each do |skill| %></td>
+		</tr>
+		<tr class="active">
+			<td><%= skill.name %></td>
+			<th></th>
+		<% end %>
+		</tr>
+	 </tbody>
+	</table>
+
+
+		<div class="col-md-8 col-md-offset-2">
+		<%= link_to 'Back',  user_path %>
+		</div>
 </div>
-<br><br>
-<table class="table">
- <tbody>
-	<tr class="info">
-		<th>Project Name:</th>
-		<td><%= @proyecto.title %></td>
-	</tr>
-	<tr class="active">
-		<th>Project Description:</th>
-		<td><%= @proyecto.description %></td>
-	</tr>
-	<tr class="info">
-		<th>Incentive:</th>
-		<td><%= @proyecto.incentive %></td>
-	</tr>
-	<tr class="active">
-		<th>Result:</th>
-		<td><%= @proyecto.result %></td>
-	</tr>
-	<tr class="info">
-		<th>Number of Students Accepted:</th>
-		<td><%= @proyecto.num_students %></td>
-	</tr>
-	<tr class="active">
-		<th>Project Deadline:</th>
-		<td><%= @proyecto.dead_line %></td>
-	</tr>
-	<tr class="info">
-		<th>Skills requeridos:</th>
-		<td class="info"><% @proyecto.skills.each do |skill| %></td>
-	</tr>
-	<tr class="active">
-		<td><%= skill.name %></td>
-		<th></th>
-	<% end %>
-	</tr>
- </tbody>
-</table>
-
-
-<%= link_to 'Back',  user_path %>

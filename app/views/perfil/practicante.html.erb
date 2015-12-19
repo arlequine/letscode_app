@@ -1,44 +1,47 @@
-<p id="notice"><%= notice %></p>
+<div class="row col-md-6 col-md-offset-3">
+	<p id="notice"><%= notice %></p>
 
-<div class="page-header">
-  <h1><%=@user.name%> <%=@user.last_name%></h1>
+	<div class="page-header">
+	  <h1><%=@user.name%> <%=@user.last_name%></h1>
+	</div>
+
+	<table class="table">
+		<tbody>
+			<tr class="info">
+				<th>Name:</th>
+				<th><%= @user.name %></th>
+			</tr>
+			<tr class="active">
+				<th>Last name:</th>
+				<th><%= @user.last_name %></th>
+			</tr>
+			<tr class="info">
+				<th>gender:</th>
+				<th><%= @user.genre %></th>
+			</tr>
+			<tr class="active">
+				<th>email:</th>
+				<th><%= @user.email %></th>
+			</tr>
+			<tr class="info">
+				<th>Birthyear:</th>
+				<th><%= @user.birthday_year %></th>
+			</tr>
+			<tr class="active">
+				<th>spects:</th>
+				<th><%= @user.opinion %></th>
+			</tr>
+			<tr class="info">
+				<th>Skills:</th>
+				<td  class="info"><% @user.skills.each do |skill| %></td>
+			</tr>
+			<tr class="info">
+			<th><%= skill.name %></th>
+			<% end %>
+			</tr>
+		</tbody> 
+	</table>
+
+	<%= link_to 'Back',  :back %>
+
 </div>
-
-<table class="table">
-	<tbody>
-		<tr class="info">
-			<th>Name:</th>
-			<th><%= @user.name %></th>
-		</tr>
-		<tr class="active">
-			<th>Last name:</th>
-			<th><%= @user.last_name %></th>
-		</tr>
-		<tr class="info">
-			<th>gender:</th>
-			<th><%= @user.genre %></th>
-		</tr>
-		<tr class="active">
-			<th>email:</th>
-			<th><%= @user.email %></th>
-		</tr>
-		<tr class="info">
-			<th>Birthyear:</th>
-			<th><%= @user.birthday_year %></th>
-		</tr>
-		<tr class="active">
-			<th>spects:</th>
-			<th><%= @user.opinion %></th>
-		</tr>
-		<tr class="info">
-			<th>Skills:</th>
-			<td  class="info"><% @user.skills.each do |skill| %></td>
-		</tr>
-		<tr class="info">
-		<th><%= skill.name %></th>
-		<% end %>
-		</tr>
-	</tbody> 
-</table>
-
-<%= link_to 'Back',  :back %>

@@ -1,54 +1,25 @@
-<div class="page-header">
-  <h1>Collaboration Space</h1>
-</div>
+<div class="row col-md-6 col-md-offset-3">
+    <div class="page-header">
+      <h1>Collaboration Space</h1>
+    </div>
 
-<% if @errors %>
-  <p><%= @errors %></p>
-<% end %>
-<div id="colabzone">
+    <% if @errors %>
+      <p><%= @errors %></p>
+    <% end %>
+    <div id="colabzone">
 
-  <%= link_to 'New Post', new_proyecto_question_path(@proyecto), class: "btn btn-success" %> 
+      <%= link_to 'New Post', new_proyecto_question_path(@proyecto), class: "btn btn-success" %> 
 
-  <% @posts_discussion = false %>
-  <% @questions.each do |question| %>
-    <% @users.each do |user| %>
-    <% if question.user_id == user.id && question.question_type == "discussion" %>
-  		<% if @posts_discussion == false %>
-          <h3>Discussions</h3>
-          <% @posts_discussion = true %>
-        <% end %>
-      <div class="status row">
-        <div class="span7">
-          <strong><%= "#{user.name} #{user.last_name} " %></strong><small>says:</small>
-          <p><strong><small><%= question.title %></small></strong></p>
-          <p><small><em><%= question.question %></em></small></p>
-          <div class="meta">
-            <p><small><%= link_to time_ago_in_words(question.created_at) + " ago", show_answers_question_path(user, @proyecto, question) %>
-            <% if question.attachment_url %>
-              <%= link_to "Download", download_file_path(question), class: 'btn btn btn-info btn-xs' %>
+      <% @posts_discussion = false %>
+      <% @questions.each do |question| %>
+        <% @users.each do |user| %>
+        <% if question.user_id == user.id && question.question_type == "discussion" %>
+      		<% if @posts_discussion == false %>
+              <h3>Discussions</h3>
+              <% @posts_discussion = true %>
             <% end %>
-            </small>
-            <span>
-  	          <%= link_to 'Reply', show_answer_path(user, @proyecto, question), class: 'btn btn btn-primary btn-xs' %>
-            </span>
-            </p>
-          </div>
-        </div>
-      </div>
-    <% end %>
-    <% end %>
-  <% end %>
-
-  <% @posts_resource = false %>
-  <% @questions.each do |question| %>
-    <% @users.each do |user| %>
-      <% if question.user_id == user.id && question.question_type == "resource" %>
-        <% if @posts_resource == false %>
-          <h3>Resources</h3>
-          <% @posts_resource = true %>
-        <% end %>
-        <div class="status row">
-          <div class="span7">
+          <div class="status row">
+            <div class="span7">
               <strong><%= "#{user.name} #{user.last_name} " %></strong><small>says:</small>
               <p><strong><small><%= question.title %></small></strong></p>
               <p><small><em><%= question.question %></em></small></p>
@@ -59,55 +30,82 @@
                 <% end %>
                 </small>
                 <span>
-                  <%= link_to 'Reply', show_answer_path(user, @proyecto, question), class: 'btn btn btn-primary btn-xs' %>
+      	          <%= link_to 'Reply', show_answer_path(user, @proyecto, question), class: 'btn btn btn-primary btn-xs' %>
                 </span>
+                </p>
               </div>
-            
+            </div>
           </div>
-        </div>
-      <% end %>  
-    <% end %>
-  <% end %>
-
-  <% @posts_deliverable = false %>
-  <% @questions.each do |question| %>
-    <% @users.each do |user| %>
-      <% if question.user_id == user.id && question.question_type == "deliverable" %>
-        <% if @posts_deliverable == false %>
-          <h3>Deliverables</h3>
-          <% @posts_deliverable = true %>
         <% end %>
-        <div class="status row">
-          <div class="span7">
-              <strong><%= "#{user.name} #{user.last_name} " %></strong><small>says:</small>
-              <p><strong><small><%= question.title %></small></strong></p>
-              <p><small><em><%= question.question %></em></small></p>
-              <div class="meta">
-                <p><small><%= link_to time_ago_in_words(question.created_at) + " ago", show_answers_question_path(user, @proyecto, question) %>
-                <% if question.attachment_url %>
-                  <%= link_to "Download", download_file_path(question), class: 'btn btn btn-info btn-xs' %>
-                <% end %>
-                </small>
-                <span>
-                  <%= link_to 'Reply', show_answer_path(user, @proyecto, question), class: 'btn btn btn-primary btn-xs' %>
-                </span>
-              </div>
-
-          </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
-  <% end %>
 
-  <% if @posts_discussion == false && @posts_resource == false && @posts_deliverable == false %>
-    <h1><small>There are no posts for <%= @proyecto.title %></small></h1>
-  <% end %>
-  <%= will_paginate @questions, renderer: BootstrapPagination::Rails %>
+      <% @posts_resource = false %>
+      <% @questions.each do |question| %>
+        <% @users.each do |user| %>
+          <% if question.user_id == user.id && question.question_type == "resource" %>
+            <% if @posts_resource == false %>
+              <h3>Resources</h3>
+              <% @posts_resource = true %>
+            <% end %>
+            <div class="status row">
+              <div class="span7">
+                  <strong><%= "#{user.name} #{user.last_name} " %></strong><small>says:</small>
+                  <p><strong><small><%= question.title %></small></strong></p>
+                  <p><small><em><%= question.question %></em></small></p>
+                  <div class="meta">
+                    <p><small><%= link_to time_ago_in_words(question.created_at) + " ago", show_answers_question_path(user, @proyecto, question) %>
+                    <% if question.attachment_url %>
+                      <%= link_to "Download", download_file_path(question), class: 'btn btn btn-info btn-xs' %>
+                    <% end %>
+                    </small>
+                    <span>
+                      <%= link_to 'Reply', show_answer_path(user, @proyecto, question), class: 'btn btn btn-primary btn-xs' %>
+                    </span>
+                  </div>
+                
+              </div>
+            </div>
+          <% end %>  
+        <% end %>
+      <% end %>
+
+      <% @posts_deliverable = false %>
+      <% @questions.each do |question| %>
+        <% @users.each do |user| %>
+          <% if question.user_id == user.id && question.question_type == "deliverable" %>
+            <% if @posts_deliverable == false %>
+              <h3>Deliverables</h3>
+              <% @posts_deliverable = true %>
+            <% end %>
+            <div class="status row">
+              <div class="span7">
+                  <strong><%= "#{user.name} #{user.last_name} " %></strong><small>says:</small>
+                  <p><strong><small><%= question.title %></small></strong></p>
+                  <p><small><em><%= question.question %></em></small></p>
+                  <div class="meta">
+                    <p><small><%= link_to time_ago_in_words(question.created_at) + " ago", show_answers_question_path(user, @proyecto, question) %>
+                    <% if question.attachment_url %>
+                      <%= link_to "Download", download_file_path(question), class: 'btn btn btn-info btn-xs' %>
+                    <% end %>
+                    </small>
+                    <span>
+                      <%= link_to 'Reply', show_answer_path(user, @proyecto, question), class: 'btn btn btn-primary btn-xs' %>
+                    </span>
+                  </div>
+
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+
+      <% if @posts_discussion == false && @posts_resource == false && @posts_deliverable == false %>
+        <h1><small>There are no posts for <%= @proyecto.title %></small></h1>
+      <% end %>
+      <%= will_paginate @questions, renderer: BootstrapPagination::Rails %>
+    </div>
 </div>
-
-  	
-
-
-
+      	
 
 

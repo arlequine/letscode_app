@@ -1,18 +1,20 @@
-<p id="notice"><%= notice %></p>
+<div class="row col-md-6 col-md-offset-3">
+	<p id="notice"><%= notice %></p>
 
 
-<p>
-	<strong>Post Title:</strong>
-	<%= @question.title %>
-</p>
-<p>
-	<strong>Post Description:</strong>
-	<%= @question.question %>
-</p>
-<div>
-  <strong>Comment Description</strong>
-  <%= @answer.answer %>
+	<p>
+		<strong>Post Title:</strong>
+		<%= @question.title %>
+	</p>
+	<p>
+		<strong>Post Description:</strong>
+		<%= @question.question %>
+	</p>
+	<div>
+	  <strong>Comment Description</strong>
+	  <%= @answer.answer %>
+	</div>
+
+	<%= link_to 'Back', collaboration_path %>
+
 </div>
-
-<%= link_to 'Back', collaboration_path %>
-
