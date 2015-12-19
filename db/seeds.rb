@@ -114,21 +114,21 @@
 @skill4.proskills << @proskill6
 
 #postulations
-@postulation1 = Postulation.create(user_id: @user1.id, proyecto_id: @proyecto1.id, status: "aceptado")
-@postulation2 = Postulation.create(user_id: @user1.id, proyecto_id: @proyecto2.id, status: "postulado")
-@postulation3 = Postulation.create(user_id: @user2.id, proyecto_id: @proyecto3.id, status: "aceptado")
-@postulation4 = Postulation.create(user_id: @user2.id, proyecto_id: @proyecto4.id, status: "postulado")
-@postulation5 = Postulation.create(user_id: @user6.id, proyecto_id: @proyecto5.id, status: "aceptado")
+@postulation1 = Postulation.create(user_id: @user1.id, proyecto_id: @proyecto1.id, status: "postulado")
+@postulation2 = Postulation.create(user_id: @user1.id, proyecto_id: @proyecto2.id, status: "aceptado")
+@postulation3 = Postulation.create(user_id: @user2.id, proyecto_id: @proyecto3.id, status: "postulado")
+@postulation4 = Postulation.create(user_id: @user2.id, proyecto_id: @proyecto4.id, status: "aceptado")
+@postulation5 = Postulation.create(user_id: @user6.id, proyecto_id: @proyecto5.id, status: "postulado")
 @postulation6 = Postulation.create(user_id: @user6.id, proyecto_id: @proyecto6.id, status: "postulado")
 
-@postulation7 = Postulation.create(user_id: @user2.id, proyecto_id: @proyecto1.id, status: "aceptado")
-@postulation8 = Postulation.create(user_id: @user6.id, proyecto_id: @proyecto1.id, status: "aceptado")
+@postulation7 = Postulation.create(user_id: @user2.id, proyecto_id: @proyecto1.id, status: "postulado")
+@postulation8 = Postulation.create(user_id: @user6.id, proyecto_id: @proyecto1.id, status: "postulado")
 
-@postulation9 = Postulation.create(user_id: @user1.id, proyecto_id: @proyecto3.id, status: "aceptado")
+@postulation9 = Postulation.create(user_id: @user1.id, proyecto_id: @proyecto3.id, status: "postulado")
 @postulation10 = Postulation.create(user_id: @user6.id, proyecto_id: @proyecto3.id, status: "aceptado")
 
 @postulation11 = Postulation.create(user_id: @user2.id, proyecto_id: @proyecto5.id, status: "aceptado")
-@postulation12 = Postulation.create(user_id: @user1.id, proyecto_id: @proyecto5.id, status: "aceptado")
+@postulation12 = Postulation.create(user_id: @user1.id, proyecto_id: @proyecto5.id, status: "postulado")
 
 
 

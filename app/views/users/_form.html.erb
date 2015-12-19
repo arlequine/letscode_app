@@ -8,9 +8,10 @@
   <% @user_value = "prac" %>
 <% end %>
 
-<%if user_type == "practicante" %>
+
+<%if @user_value == "prac" %>
     <h1 id="hsign"><%= "#{user_type.capitalize}, registrate." %></h1>
-    <%elsif user_type == "empresa" %>
+<% else %>
     <h1 id="hsign"><%= "#{user_type.capitalize}, registrate." %></h1>
   <%end%>
   <br>

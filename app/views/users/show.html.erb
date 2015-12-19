@@ -28,12 +28,13 @@
 					</tr>
 				</thead>
 				<tbody>
+
 	        <% all_projects.each do |project| %>
-          <% @find = false %>
+              <% @find = false %>
                 <tr>
 				  <% current_user.postulations.each do |postulation|  %>
 					  
-					  <% if postulation.proyecto_id == project.id %>
+					  <% if postulation.proyecto_id == project.id && current_user.id == postulation.user_id %>
 					    <% project = current_project(postulation.proyecto_id) %>
 					      <% @find = true %>
 					      <!-- working -->
@@ -42,7 +43,8 @@
 						  <% if project.status_of_project(project) == "aceptado" %>
 						    <td><span class="label label-success">Accepted</span></td>
 						    <td><%= link_to 'Collaborate', show_collaboration_space_path(project), class: 'btn btn-success btn-sm' %></td>
-						  <% elsif project.status_of_project(project) == "postulado" %>
+						  <% end %>
+						  <% if project.status_of_project(project) == "postulado" %>
 						    <td><span class="label label-warning">Processing</span></td>
 						    <td><button type="button" class="btn btn-warning btn-sm" disabled="true"><%= "Applied" %></button></td>
 						  <% end %>
