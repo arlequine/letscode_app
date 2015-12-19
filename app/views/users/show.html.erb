@@ -33,37 +33,34 @@
               <% @find = false %>
                 <tr>
 				  <% current_user.postulations.each do |postulation|  %>
-					  
 					  <% if postulation.proyecto_id == project.id && current_user.id == postulation.user_id %>
-					    <% project = current_project(postulation.proyecto_id) %>
-					      <% @find = true %>
-					      <!-- working -->
-						  <td><%= link_to project.title, description_project_path(project) %></td>
-						  <!-- worked -->
-						  <% if project.status_of_project(project) == "aceptado" %>
+					     <% @find = true %>
+				         <!-- working -->
+					     <td><%= link_to project.title, description_project_path(project) %></td>
+					     <!-- worked -->
+					     <% if postulation.status == "aceptado" %>
 						    <td><span class="label label-success">Accepted</span></td>
 						    <td><%= link_to 'Collaborate', show_collaboration_space_path(project), class: 'btn btn-success btn-sm' %></td>
-						  <% end %>
-						  <% if project.status_of_project(project) == "postulado" %>
+						 <% end %>
+						 <% if postulation.status == "postulado" %>
 						    <td><span class="label label-warning">Processing</span></td>
 						    <td><button type="button" class="btn btn-warning btn-sm" disabled="true"><%= "Applied" %></button></td>
 						  <% end %>
-					        
-					    <% end %>
-					<% end %><!-- postulations -->	
+					  <% end %>
+				  <% end %><!-- postulations -->	
 					<% if @find == false %>
 						<td><%= link_to project.title, description_project_path(project) %></td>
 						<td><span class="label label-danger">Available</span></td>
 						<td><%= link_to ' Join ', request_path(project),class: "btn btn-danger btn-sm" %></td>	
 					<% end %>
 				</tr>
-				<% end %><!-- projects -->		
-				</tbody>
+			<% end %><!-- projects -->		
+			</tbody>
 			</table>
 			
 		<% else %>
-
-			<table class="table table-hover">
+            <% if current_user.proyectos.count != 0 %>
+			  <table class="table table-hover">
 				<thead>
 					<tr>
 						<th>Project Title</th>
@@ -89,9 +86,13 @@
 				  	<td><%= link_to 'Destroy', proyecto, method: :delete, class: 'btn btn-danger btn-sm', data: { confirm: 'Are you sure?' }, :remote => true %></td>
 				  </tr>
 				<% end %>
-			</tbody>
-		</table>
-	<% end %>
+			    </tbody>
+		      </table>
+		    </div></div>
+		    <% else %>
+		      <h3>There are no projects</h3>
+		    <% end %>
+	   <% end %>   
 	<br><br><br><br>
 	<div  class="col-xs-12 col-xs-offset-0 col-sm-12 col-sm-offset-0 col-md-12 col-md-offset-0 col-lg-3 col-lg-offset-2">
 		<% if current_user.user_type == "empresa" %>
@@ -100,6 +101,3 @@
 	</div>
   </div>
 </div>
-
-
-

@@ -8,12 +8,15 @@
 <% end %>
 
 
-<%if @user_value == "prac" %>
+<%if @user_value == "prac" && @register == "Update" %>
+    <h1 id="hsign"><%= "#{user_type.capitalize}, registrate." %></h1>
+<% elsif @user_value == "emp" && @register == "Update"  %>
     <h1 id="hsign"><%= "#{user_type.capitalize}, registrate." %></h1>
 <% else %>
-    <h1 id="hsign"><%= "#{user_type.capitalize}, registrate." %></h1>
-<%end%>
-  <br>
+    <h1 id="hsign">Update your Profile</h1>
+<% end %>
+
+<br>
 <hr>
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>

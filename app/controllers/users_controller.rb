@@ -14,6 +14,7 @@ class UsersController < ApplicationController
 
   def new
     @user_type = params[:user_type]
+    @register = params[:register]
     @user = User.new
   end
 
