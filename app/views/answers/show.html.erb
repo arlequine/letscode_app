@@ -1,20 +1,20 @@
 <div class="row col-md-6 col-md-offset-3">
 	<p id="notice"><%= notice %></p>
 
+<table class="table">
+	<tr class="info">
+		<th><strong>Post Title:</strong></th>
+		<th><%= @question.title %></th>
+	</tr>
+	<tr class="active">
+		<th><strong>Post Description:</strong></th>
+		<th><%= @question.question %></th>
+	</tr>
+	<tr class="info">
+	  <th><strong>Comment Description</strong></th>
+	  <th><%= @answer.answer %></th>
+	</tr>
 
-	<p>
-		<strong>Post Title:</strong>
-		<%= @question.title %>
-	</p>
-	<p>
-		<strong>Post Description:</strong>
-		<%= @question.question %>
-	</p>
-	<div>
-	  <strong>Comment Description</strong>
-	  <%= @answer.answer %>
-	</div>
-
-	<%= link_to 'Back', collaboration_path %>
-
+	<%= link_to 'Back', :back %>
+</table>
 </div>
