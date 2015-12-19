@@ -7,11 +7,12 @@
   <% @user_value = "prac" %>
 <% end %>
 
-<%if user_type == "practicante"  %>
-    <h1><%= "#{user_type.capitalize}, registrate." %></h1>
-    <%elsif user_type == "empresa" %>
-    <h1><%= "#{user_type.capitalize}, registrate." %></h1>
-  <%end%>
+
+<%if @user_value == "prac" %>
+    <h1 id="hsign"><%= "#{user_type.capitalize}, registrate." %></h1>
+<% else %>
+    <h1 id="hsign"><%= "#{user_type.capitalize}, registrate." %></h1>
+<%end%>
   <br>
 <hr>
 <%= form_for(@user) do |f| %>
